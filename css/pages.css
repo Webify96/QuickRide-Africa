@@ -31,6 +31,10 @@
   display: block;
 }
 
+@media (max-width: 768px) {
+  .hero__img { object-position: center 65%; }
+}
+
 /* Multi-layer overlay: centred vignette */
 .hero__overlay {
   position: absolute;

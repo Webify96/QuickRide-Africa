@@ -245,7 +245,7 @@
 /* ─── Responsive breakpoints ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav__links { display: none; }
-  .nav__cta   { display: none; }
+  .nav__cta   { display: none !important; }
   .nav__toggle { display: flex; }
 }
 
