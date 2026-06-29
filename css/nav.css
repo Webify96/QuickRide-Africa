@@ -164,12 +164,15 @@
   justify-content: center;
   padding: calc(var(--nav-h) + var(--sp-8)) var(--container-pad) var(--sp-12);
   transform: translateX(100%);
-  transition: transform var(--dur-slow) var(--ease-out);
+  visibility: hidden;
+  transition: transform var(--dur-slow) var(--ease-out), visibility 0s var(--dur-slow);
   pointer-events: none;
 }
 
 .nav__mobile.is-open {
   transform: translateX(0);
+  visibility: visible;
+  transition: transform var(--dur-slow) var(--ease-out), visibility 0s 0s;
   pointer-events: auto;
 }
 
