@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickRide Africa</title>
+  <meta name="description" content="Professional airport transfers, chauffeur services, corporate transport, event logistics, and managed ground handling across Southern Africa. Available 24/7 for scheduled and last-minute bookings.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://quickride.africa/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Modules (order matters) -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- Schema.org — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "QuickRide Africa",
+    "description": "Professional ground transportation company serving corporate, institutional, and event clients across Southern Africa.",
+    "telephone": "+27742705488",
+    "email": "mpoyi@quickride.africa",
+    "url": "https://quickride.africa",
+    "openingHours": "Mo-Fr 08:00-17:00",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Southern Africa"
+    },
+    "serviceType": [
+      "Airport Transfers",
+      "Chauffeur Services",
+      "Corporate Transport",
+      "Event Transport",
+      "Shuttle Services",
+      "Ground Handling"
+    ],
+    "sameAs": [
+      "https://maps.app.goo.gl/8XifBrcSpeb7UvFg8"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════════════════════ -->
+<nav class="site-nav site-nav--transparent" id="site-nav" aria-label="Main navigation">
+  <div class="container nav__inner">
+
+    <a href="index.html" class="nav__logo" aria-label="QuickRide Africa — home">
+      <span class="nav__logo-primary">QuickRide</span>
+      <span class="nav__logo-secondary">Africa</span>
+    </a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="about.html"     class="nav__link">About</a></li>
+      <li><a href="services.html"  class="nav__link">Services</a></li>
+      <li><a href="fleet.html"     class="nav__link">Fleet</a></li>
+      <li><a href="corporate.html" class="nav__link">Corporate</a></li>
+      <li><a href="faq.html"       class="nav__link">FAQ</a></li>
+      <li><a href="contact.html"   class="nav__link">Contact</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a href="book.html" class="btn btn--gold nav__cta">Request a Quote</a>
+      <button class="nav__toggle" id="nav-toggle"
+              aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Mobile overlay menu -->
+<div class="nav__mobile" id="nav-mobile" aria-label="Mobile navigation">
+  <ul class="nav__mobile-links" role="list">
+    <li><a href="about.html"     class="nav__mobile-link">About</a></li>
+    <li><a href="services.html"  class="nav__mobile-link">Services</a></li>
+    <li><a href="fleet.html"     class="nav__mobile-link">Fleet</a></li>
+    <li><a href="corporate.html" class="nav__mobile-link">Corporate</a></li>
+    <li><a href="faq.html"       class="nav__mobile-link">FAQ</a></li>
+    <li><a href="contact.html"   class="nav__mobile-link">Contact</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <a href="book.html" class="btn btn--gold btn--lg">Request a Quote</a>
+  </div>
+  <div class="nav__mobile-contact">
+    <a href="tel:+27742705488">+27 74 270 5488</a>
+    <a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     HERO — Fullscreen, S-Class sedan as cinematic anchor
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero__media">
+    <img src="img/5.jpeg"
+         alt="QuickRide Africa executive fleet — Mercedes-Benz S-Class"
+         class="hero__img"
+         loading="eager"
+         fetchpriority="high">
+    <div class="hero__overlay" aria-hidden="true"></div>
+  </div>
+
+  <div class="container hero__content">
+    <p class="eyebrow hero__eyebrow">Southern Africa's Corporate Ground Transportation Partner</p>
+
+    <h1 class="display hero__headline">
+      Where Every Journey<br>Reflects Your Standard
+    </h1>
+
+    <p class="hero__sub">
+      Professional airport transfers, chauffeur services, and managed ground transport for organisations that demand precision and professionalism.
+    </p>
+
+    <div class="hero__ctas">
+      <a href="book.html"     class="btn btn--gold btn--lg">Request a Quote</a>
+      <a href="services.html" class="btn btn--outline-white btn--lg">Our Services</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <div class="hero__scroll-line"></div>
+    <span class="hero__scroll-label">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     TRUST STRIP
+══════════════════════════════════════════════════════════════════════════ -->
+<div class="trust-strip" aria-label="Service highlights">
+  <div class="trust-strip__track">
+
+    <div class="trust-item">
+      <svg class="trust-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span class="trust-item__label">Professional Chauffeurs</span>
+    </div>
+
+    <div class="trust-item">
+      <svg class="trust-item__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span class="trust-item__label">24/7 Operations Support</span>
+    </div>
+
+    <div class="trust-item">
+      <svg class="trust-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="trust-item__label">Flight Monitoring</span>
+    </div>
+
+    <div class="trust-item">
+      <svg class="trust-item__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+      <span class="trust-item__label">Corporate Accounts</span>
+    </div>
+
+    <div class="trust-item">
+      <svg class="trust-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="trust-item__label">Pickup & Drop-off Any Time</span>
+    </div>
+
+    <div class="trust-item">
+      <svg class="trust-item__icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+      <span class="trust-item__label">Last-Minute Bookings</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INTRO — About QuickRide Africa
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="section section--midnight intro-section" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="split-grid">
+
+      <div class="split-grid__text-col" data-reveal>
+        <p class="eyebrow">About QuickRide Africa</p>
+        <h2 class="heading" id="intro-heading" style="color:var(--c-pearl)">
+          Well-coordinated transport for clients who need more than a vehicle.
+        </h2>
+        <p class="body-lead" style="color:var(--c-slate)">
+          We focus on dependable service, clear communication, and smooth execution from booking to drop-off. Whether you need a single executive transfer or multiple vehicles for a conference or event, we manage transport with professionalism and care.
+        </p>
+        <div style="display:flex; gap:var(--sp-4); flex-wrap:wrap; margin-top:var(--sp-2)">
+          <a href="about.html" class="btn btn--outline-gold">Learn About Us</a>
+          <a href="contact.html" class="btn btn--ghost" style="color:var(--c-slate);border-color:var(--c-divider-dark)">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="split-grid__img-col" data-reveal data-delay="200">
+        <img src="img/2.jpeg"
+             alt="QuickRide Africa — Mercedes-Benz G-Class executive SUV in Johannesburg"
+             class="split-grid__img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SERVICES — Six service categories
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="section section--bone services-section" aria-labelledby="services-heading">
+  <div class="container">
+
+    <header class="section-header" data-reveal>
+      <p class="eyebrow">What We Do</p>
+      <h2 class="heading" id="services-heading" style="color:var(--c-on-light)">
+        Comprehensive ground transport solutions
+      </h2>
+      <p class="body-lead" style="color:var(--c-muted)">
+        From single executive pickups to multi-vehicle conference logistics — we manage every movement with the same standard of care.
+      </p>
+    </header>
+
+    <div class="services-grid">
+
+      <article class="service-card" data-reveal>
+        <div class="service-card__index">01</div>
+        <h3 class="service-card__title">Airport Transfers</h3>
+        <p class="service-card__body">Meet-and-greet airport transfers with flight monitoring and professional pickup coordination for domestic and international arrivals.</p>
+        <a href="services.html#airport" class="service-card__link">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card" data-reveal data-delay="100">
+        <div class="service-card__index">02</div>
+        <h3 class="service-card__title">Chauffeur Services</h3>
+        <p class="service-card__body">Private chauffeur-driven transport for executives, VIPs, diplomats, and business travellers who require discretion and professionalism.</p>
+        <a href="services.html#chauffeur" class="service-card__link">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card" data-reveal data-delay="200">
+        <div class="service-card__index">03</div>
+        <h3 class="service-card__title">Corporate Transport</h3>
+        <p class="service-card__body">Managed mobility for meetings, roadshows, site visits, staff transport, and client hospitality. Consistent and reliable.</p>
+        <a href="services.html#corporate" class="service-card__link">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card" data-reveal data-delay="300">
+        <div class="service-card__index">04</div>
+        <h3 class="service-card__title">Event &amp; Conference Transport</h3>
+        <p class="service-card__body">Delegate movements, VIP transfers, speaker transport, and multi-vehicle event coordination. Timing and experience matter.</p>
+        <a href="services.html#events" class="service-card__link">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card" data-reveal data-delay="400">
+        <div class="service-card__index">05</div>
+        <h3 class="service-card__title">Shuttle Services</h3>
+        <p class="service-card__body">Reliable shuttle solutions for hotels, corporate offices, universities, estates, hospitals, and institutions with scheduled runs.</p>
+        <a href="services.html#shuttle" class="service-card__link">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </a>
+      </article>
+
+      <article class="service-card" data-reveal data-delay="500">
+        <div class="service-card__index">06</div>
+        <h3 class="service-card__title">Ground Handling &amp; Coordination</h3>
+        <p class="service-card__body">Transport planning, dispatch, arrivals support, and vehicle coordination for organised group movements at scale.</p>
+        <a href="services.html#ground" class="service-card__link">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     WHY CHOOSE US — Five value pillars
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="section section--dark values-section" aria-labelledby="values-heading">
+  <div class="container">
+
+    <header class="section-header" data-reveal>
+      <p class="eyebrow">Why QuickRide Africa</p>
+      <h2 class="heading" id="values-heading" style="color:var(--c-pearl)">
+        Service standards that reflect your reputation
+      </h2>
+    </header>
+
+    <div class="values-grid">
+
+      <div class="value-pillar" data-reveal>
+        <div class="value-pillar__marker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="value-pillar__title">Clear Communication</h3>
+          <p class="value-pillar__body">From booking confirmation to drop-off, you're kept informed at every step. No guesswork.</p>
+        </div>
+      </div>
+
+      <div class="value-pillar" data-reveal data-delay="100">
+        <div class="value-pillar__marker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <h3 class="value-pillar__title">Professional Standards</h3>
+          <p class="value-pillar__body">Our chauffeurs are trained for presentation, discretion, and professional conduct in every client interaction.</p>
+        </div>
+      </div>
+
+      <div class="value-pillar" data-reveal data-delay="200">
+        <div class="value-pillar__marker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h3 class="value-pillar__title">Efficient Coordination</h3>
+          <p class="value-pillar__body">Single trips and large group movements handled with the same level of precision and logistical care.</p>
+        </div>
+      </div>
+
+      <div class="value-pillar" data-reveal data-delay="300">
+        <div class="value-pillar__marker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div>
+          <h3 class="value-pillar__title">Flexible Fleet Options</h3>
+          <p class="value-pillar__body">Executive sedans to full-size coaches — matched to your passenger count and service requirement.</p>
+        </div>
+      </div>
+
+      <div class="value-pillar" data-reveal data-delay="400">
+        <div class="value-pillar__marker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3 class="value-pillar__title">Practical Solutions</h3>
+          <p class="value-pillar__body">We focus on what works — dependable service, clear pricing, and solutions built for corporate and event logistics.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     FLEET PREVIEW — Horizontal drag gallery
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="section section--midnight fleet-section" aria-labelledby="fleet-heading">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <p class="eyebrow">Our Fleet</p>
+      <h2 class="heading" id="fleet-heading" style="color:var(--c-pearl)">
+        A fleet that commands attention
+      </h2>
+      <p class="body-lead" style="color:var(--c-slate)">
+        Executive sedans, luxury SUVs, minibuses, and coaches — every vehicle chosen for comfort, presentation, and reliability.
+      </p>
+    </header>
+  </div>
+
+  <div class="fleet-section__gallery-wrap">
+    <div class="fleet-gallery" role="list" aria-label="Fleet vehicles">
+
+      <div class="fleet-card" role="listitem">
+        <img src="img/5.jpeg"
+             alt="Mercedes-Benz S-Class executive sedan — QuickRide Africa"
+             class="fleet-card__img"
+             loading="lazy">
+        <div class="fleet-card__label">Executive Sedan · S-Class</div>
+      </div>
+
+      <div class="fleet-card" role="listitem">
+        <img src="img/1.jpeg"
+             alt="Range Rover — QuickRide Africa executive SUV"
+             class="fleet-card__img"
+             loading="lazy">
+        <div class="fleet-card__label">Luxury SUV · Range Rover</div>
+      </div>
+
+      <div class="fleet-card" role="listitem">
+        <img src="img/2.jpeg"
+             alt="Mercedes-Benz G-Class AMG — QuickRide Africa executive SUV"
+             class="fleet-card__img"
+             loading="lazy">
+        <div class="fleet-card__label">Executive SUV · G-Class AMG</div>
+      </div>
+
+      <div class="fleet-card" role="listitem">
+        <img src="img/4.jpeg"
+             alt="Mercedes-Benz G-Class — QuickRide Africa corporate transport"
+             class="fleet-card__img"
+             loading="lazy">
+        <div class="fleet-card__label">Executive SUV · G-Class</div>
+      </div>
+
+      <div class="fleet-card" role="listitem">
+        <img src="img/3.jpeg"
+             alt="Mercedes-Benz G-Class Johannesburg — QuickRide Africa"
+             class="fleet-card__img"
+             loading="lazy">
+        <div class="fleet-card__label">Executive SUV · Johannesburg</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:var(--sp-10); display:flex; gap:var(--sp-4)">
+    <a href="fleet.html" class="btn btn--outline-gold" data-reveal>View Full Fleet</a>
+    <a href="book.html"  class="btn btn--gold" data-reveal data-delay="100">Request a Quote</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     INDUSTRIES SERVED
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="section section--bone industries-section" aria-labelledby="industries-heading">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <p class="eyebrow">Industries We Serve</p>
+      <h2 class="heading" id="industries-heading" style="color:var(--c-on-light)">
+        Built for organisations that operate at scale
+      </h2>
+    </header>
+
+    <div class="industry-cloud" data-reveal>
+      <span class="industry-tag">Corporate Organisations</span>
+      <span class="industry-tag">Travel Management Companies</span>
+      <span class="industry-tag">Destination Management Companies</span>
+      <span class="industry-tag">Hotels</span>
+      <span class="industry-tag">Airlines</span>
+      <span class="industry-tag">Embassies</span>
+      <span class="industry-tag">Government Departments</span>
+      <span class="industry-tag">NGOs</span>
+      <span class="industry-tag">Universities</span>
+      <span class="industry-tag">Hospitals</span>
+      <span class="industry-tag">Conference Organisers</span>
+      <span class="industry-tag">Event Planners</span>
+      <span class="industry-tag">Sports Teams</span>
+      <span class="industry-tag">Film Production Companies</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     CTA BAND
+══════════════════════════════════════════════════════════════════════════ -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <p class="eyebrow" data-reveal style="margin-bottom:var(--sp-5)">Get Started</p>
+    <h2 class="cta-band__headline" id="cta-heading" data-reveal data-delay="100">
+      Need transport for an executive trip,<br>airport transfer, or event?
+    </h2>
+    <p class="cta-band__sub" data-reveal data-delay="200">
+      Submit your details and we'll respond with the best option for your journey.
+    </p>
+    <div class="cta-band__actions" data-reveal data-delay="300">
+      <a href="book.html"    class="btn btn--gold btn--lg">Request a Quote</a>
+      <a href="contact.html" class="btn btn--outline-white btn--lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo" aria-label="QuickRide Africa">
+          <span class="footer__logo-primary">QuickRide</span>
+          <span class="footer__logo-secondary">Africa</span>
+        </a>
+        <p class="footer__tagline">Professional Ground Transportation &amp; Ground Handling Services Across Southern Africa.</p>
+        <p class="footer__services-tag">
+          Airport Transfers · Corporate Transport · Chauffeur Services<br>
+          Ground Handling · Conference Transport · Shuttle Services · Group Transport
+        </p>
+      </div>
+
+      <!-- Services links -->
+      <div>
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links">
+          <li><a href="services.html#airport"   class="footer__link">Airport Transfers</a></li>
+          <li><a href="services.html#chauffeur" class="footer__link">Chauffeur Services</a></li>
+          <li><a href="services.html#corporate" class="footer__link">Corporate Transport</a></li>
+          <li><a href="services.html#events"    class="footer__link">Event Transport</a></li>
+          <li><a href="services.html#shuttle"   class="footer__link">Shuttle Services</a></li>
+          <li><a href="services.html#ground"    class="footer__link">Ground Handling</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <p class="footer__col-title">Company</p>
+        <ul class="footer__links">
+          <li><a href="about.html"     class="footer__link">About Us</a></li>
+          <li><a href="fleet.html"     class="footer__link">Fleet</a></li>
+          <li><a href="corporate.html" class="footer__link">Corporate Accounts</a></li>
+          <li><a href="faq.html"       class="footer__link">FAQ</a></li>
+          <li><a href="contact.html"   class="footer__link">Contact</a></li>
+          <li><a href="book.html"      class="footer__link">Request a Quote</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Phone</span>
+            <span class="footer__contact-value"><a href="tel:+27742705488">+27 74 270 5488</a></span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Email</span>
+            <span class="footer__contact-value"><a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a></span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Office Hours</span>
+            <span class="footer__contact-value">Mon–Fri, 08:00 – 17:00</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Operations</span>
+            <span class="footer__contact-value">24/7 for confirmed bookings</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Google</span>
+            <span class="footer__contact-value"><a href="https://maps.app.goo.gl/8XifBrcSpeb7UvFg8" target="_blank" rel="noopener noreferrer">View on Google Maps</a></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 QuickRide Africa. All rights reserved.</p>
+      <div class="footer__legal-links">
+        <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+        <a href="terms.html"   class="footer__legal-link">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JS Modules -->
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

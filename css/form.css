@@ -1,0 +1,424 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   QuickRide Africa — Multi-Step Booking Form
+───────────────────────────────────────────────────────────────────────── */
+
+/* ─── Form page layout ───────────────────────────────────────────────────── */
+.form-page {
+  background: var(--c-ink);
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+}
+
+.form-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) var(--container-pad) clamp(4rem, 8vw, 7rem);
+}
+
+/* ─── Step header ────────────────────────────────────────────────────────── */
+.form-header {
+  margin-bottom: var(--sp-10);
+}
+.form-header .eyebrow { margin-bottom: var(--sp-4); }
+.form-header__title {
+  font-family: var(--f-display);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--c-pearl);
+  line-height: 1.1;
+  margin-bottom: var(--sp-4);
+}
+.form-header__sub {
+  font-size: var(--fs-base);
+  color: var(--c-slate);
+  max-width: 55ch;
+}
+
+/* ─── Stepper / progress ─────────────────────────────────────────────────── */
+.form-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: var(--sp-10);
+}
+
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 1;
+  position: relative;
+  cursor: default;
+}
+
+.step-dot__circle {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-divider-dark);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-label);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--c-slate-dim);
+  transition:
+    border-color var(--dur-base),
+    background   var(--dur-base),
+    color        var(--dur-base);
+  position: relative;
+  z-index: 1;
+}
+
+.step-dot--active .step-dot__circle {
+  border-color: var(--c-gold);
+  background: var(--c-gold-muted);
+  color: var(--c-gold);
+}
+
+.step-dot--done .step-dot__circle {
+  border-color: var(--c-gold);
+  background: var(--c-gold);
+  color: var(--c-ink);
+}
+
+/* Connecting line */
+.step-dot::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: calc(50% + 14px);
+  right: calc(-50% + 14px);
+  height: 1px;
+  background: var(--c-divider-dark);
+  transition: background var(--dur-base);
+}
+.step-dot:last-child::before { display: none; }
+.step-dot--done::before { background: var(--c-gold-border); }
+
+.step-dot__label {
+  font-family: var(--f-label);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-slate-dim);
+  white-space: nowrap;
+  transition: color var(--dur-base);
+}
+.step-dot--active .step-dot__label { color: var(--c-gold); }
+.step-dot--done .step-dot__label   { color: var(--c-slate); }
+
+@media (max-width: 600px) {
+  .step-dot__label { display: none; }
+}
+
+/* ─── Form steps (slide in/out) ───────────────────────────────────────────── */
+.form-step {
+  display: none;
+}
+.form-step.is-active {
+  display: block;
+  animation: stepIn var(--dur-base) var(--ease-out);
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.step-title {
+  font-family: var(--f-display);
+  font-size: clamp(var(--fs-xl), 2.5vw, var(--fs-3xl));
+  font-weight: 400;
+  color: var(--c-pearl);
+  margin-bottom: var(--sp-8);
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--c-divider-dark);
+}
+
+/* ─── Form fields ────────────────────────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-5);
+}
+.form-row--full { grid-template-columns: 1fr; }
+.form-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+
+@media (max-width: 580px) {
+  .form-row, .form-row--3 { grid-template-columns: 1fr; }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.form-field label {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-slate);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--c-divider-dark);
+  border-radius: var(--r-sm);
+  color: var(--c-pearl);
+  font-size: var(--fs-base);
+  padding: 0.75em 1em;
+  outline: none;
+  transition:
+    border-color var(--dur-fast),
+    background   var(--dur-fast),
+    box-shadow   var(--dur-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(138, 155, 181, 0.4);
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: rgba(138, 155, 181, 0.3);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--c-gold);
+  background: rgba(184, 146, 42, 0.04);
+  box-shadow: 0 0 0 3px rgba(184, 146, 42, 0.1);
+}
+
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A9BB5' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 2.5em;
+  cursor: pointer;
+}
+.form-field select option {
+  background: var(--c-midnight);
+  color: var(--c-pearl);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Error state */
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea {
+  border-color: #E05252;
+  box-shadow: 0 0 0 3px rgba(224, 82, 82, 0.1);
+}
+.form-field .field-error {
+  font-size: var(--fs-xs);
+  color: #E05252;
+  display: none;
+}
+.form-field.has-error .field-error { display: block; }
+
+/* Optional badge */
+.field-opt {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--c-slate-dim);
+  margin-left: var(--sp-2);
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+/* ─── Vehicle selector (visual radio) ────────────────────────────────────── */
+.vehicle-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.vehicle-option {
+  position: relative;
+}
+.vehicle-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+.vehicle-option__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-5) var(--sp-4);
+  border: 1px solid var(--c-divider-dark);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color var(--dur-fast),
+    background   var(--dur-fast);
+}
+.vehicle-option__label svg {
+  width: 28px; height: 28px;
+  stroke: var(--c-slate);
+  stroke-width: 1.25;
+  fill: none;
+  transition: stroke var(--dur-fast);
+}
+.vehicle-option__name {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--c-slate);
+  transition: color var(--dur-fast);
+}
+
+.vehicle-option input:checked + .vehicle-option__label {
+  border-color: var(--c-gold);
+  background: var(--c-gold-muted);
+}
+.vehicle-option input:checked + .vehicle-option__label svg { stroke: var(--c-gold); }
+.vehicle-option input:checked + .vehicle-option__label .vehicle-option__name { color: var(--c-gold); }
+.vehicle-option__label:hover {
+  border-color: var(--c-gold-border);
+  background: rgba(184, 146, 42, 0.05);
+}
+
+/* ─── Preferred contact chips ────────────────────────────────────────────── */
+.contact-method-options {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-2);
+}
+.contact-method-opt { position: relative; }
+.contact-method-opt input { position: absolute; opacity: 0; width: 0; height: 0; }
+.contact-method-opt__label {
+  display: inline-block;
+  padding: 0.4em 1em;
+  border: 1px solid var(--c-divider-dark);
+  border-radius: 100px;
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--c-slate);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast),
+    color        var(--dur-fast),
+    background   var(--dur-fast);
+}
+.contact-method-opt input:checked + .contact-method-opt__label {
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+  background: var(--c-gold-muted);
+}
+
+/* ─── Form navigation ────────────────────────────────────────────────────── */
+.form-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--sp-10);
+  margin-top: var(--sp-8);
+  border-top: 1px solid var(--c-divider-dark);
+  gap: var(--sp-4);
+}
+
+.form-nav__back {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-slate);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color var(--dur-fast);
+}
+.form-nav__back:hover { color: var(--c-pearl); }
+.form-nav__back:disabled { opacity: 0.3; cursor: default; }
+
+/* ─── Confirmation message ───────────────────────────────────────────────── */
+.form-confirmation {
+  display: none;
+  text-align: center;
+  padding: var(--sp-16) var(--sp-8);
+}
+.form-confirmation.is-visible { display: block; }
+
+.form-confirmation__icon {
+  width: 64px; height: 64px;
+  border: 1px solid var(--c-gold-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--sp-8);
+}
+.form-confirmation__icon svg {
+  width: 28px; height: 28px;
+  stroke: var(--c-gold);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.form-confirmation__title {
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--c-pearl);
+  margin-bottom: var(--sp-5);
+  letter-spacing: -0.02em;
+}
+.form-confirmation__body {
+  font-size: var(--fs-base);
+  color: var(--c-slate);
+  max-width: 50ch;
+  margin: 0 auto var(--sp-8);
+  line-height: 1.8;
+}
+
+/* ─── Flight info section (conditional visibility) ───────────────────────── */
+.flight-section {
+  display: none;
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--c-divider-dark);
+  margin-top: var(--sp-6);
+}
+.flight-section.is-visible { display: block; }
+.flight-section__label {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: var(--sp-6);
+}

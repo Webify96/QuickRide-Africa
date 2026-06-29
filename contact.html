@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact QuickRide Africa | Corporate Ground Transportation</title>
+  <meta name="description" content="Contact QuickRide Africa for airport transfers, chauffeur services, corporate transport, event logistics, and managed ground handling. Available 24/7 for confirmed bookings.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://quickride.africa/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/form.css">
+
+  <style>
+    /* Contact-specific form (simple, single-step) */
+    .contact-form { display: flex; flex-direction: column; gap: var(--sp-5); }
+    .contact-form-field { display: flex; flex-direction: column; gap: var(--sp-2); }
+    .contact-form-field label {
+      font-family: var(--f-label); font-size: var(--fs-xs); font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-slate);
+    }
+    .contact-form-field input,
+    .contact-form-field select,
+    .contact-form-field textarea {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--c-divider-dark);
+      border-radius: var(--r-sm); color: var(--c-pearl); font-size: var(--fs-base);
+      padding: 0.75em 1em; outline: none; font-family: var(--f-body);
+      transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+    }
+    .contact-form-field input::placeholder,
+    .contact-form-field textarea::placeholder { color: rgba(138,155,181,0.4); }
+    .contact-form-field input:focus,
+    .contact-form-field select:focus,
+    .contact-form-field textarea:focus {
+      border-color: var(--c-gold);
+      box-shadow: 0 0 0 3px rgba(184,146,42,0.1);
+    }
+    .contact-form-field textarea { resize: vertical; min-height: 120px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav site-nav--solid" id="site-nav" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-primary">QuickRide</span><span class="nav__logo-secondary">Africa</span></a>
+    <ul class="nav__links" role="list">
+      <li><a href="about.html"     class="nav__link">About</a></li>
+      <li><a href="services.html"  class="nav__link">Services</a></li>
+      <li><a href="fleet.html"     class="nav__link">Fleet</a></li>
+      <li><a href="corporate.html" class="nav__link">Corporate</a></li>
+      <li><a href="faq.html"       class="nav__link">FAQ</a></li>
+      <li><a href="contact.html"   class="nav__link">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="book.html" class="btn btn--gold nav__cta">Request a Quote</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="nav-mobile">
+  <ul class="nav__mobile-links" role="list">
+    <li><a href="about.html"     class="nav__mobile-link">About</a></li>
+    <li><a href="services.html"  class="nav__mobile-link">Services</a></li>
+    <li><a href="fleet.html"     class="nav__mobile-link">Fleet</a></li>
+    <li><a href="corporate.html" class="nav__mobile-link">Corporate</a></li>
+    <li><a href="faq.html"       class="nav__mobile-link">FAQ</a></li>
+    <li><a href="contact.html"   class="nav__mobile-link">Contact</a></li>
+  </ul>
+  <div class="nav__mobile-cta"><a href="book.html" class="btn btn--gold btn--lg">Request a Quote</a></div>
+  <div class="nav__mobile-contact">
+    <a href="tel:+27742705488">+27 74 270 5488</a>
+    <a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="container">
+    <span class="page-hero__accent"></span>
+    <p class="eyebrow page-hero__eyebrow">Contact Us</p>
+    <h1 class="page-hero__title">Let's connect.</h1>
+    <p class="page-hero__sub">Reach out to discuss your transport requirements or request a quote. Our team responds promptly during business hours.</p>
+  </div>
+</header>
+
+<!-- CONTACT CONTENT -->
+<section class="section section--dark" aria-label="Contact details and form">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: contact info -->
+      <div data-reveal>
+        <p class="eyebrow" style="margin-bottom:var(--sp-8)">Get In Touch</p>
+
+        <div class="contact-info">
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail__label">Phone</p>
+              <p class="contact-detail__value"><a href="tel:+27742705488">+27 74 270 5488</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail__label">Email</p>
+              <p class="contact-detail__value"><a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail__label">Business Hours</p>
+              <p class="contact-detail__value">Monday to Friday, 08:00 – 17:00</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail__label">Operations Support</p>
+              <p class="contact-detail__value">24/7 for confirmed bookings</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail__label">Availability</p>
+              <p class="contact-detail__value">Scheduled and last-minute bookings subject to availability</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-actions">
+          <a href="tel:+27742705488"
+             class="btn btn--gold"
+             aria-label="Call QuickRide Africa">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/27742705488"
+             class="btn btn--outline-gold"
+             aria-label="WhatsApp QuickRide Africa"
+             target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://maps.app.goo.gl/8XifBrcSpeb7UvFg8"
+             class="btn btn--outline-white"
+             aria-label="View QuickRide Africa on Google Maps"
+             target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: quick enquiry form -->
+      <div data-reveal data-delay="150">
+        <p class="eyebrow" style="margin-bottom:var(--sp-6)">Quick Enquiry</p>
+        <p style="font-size:var(--fs-sm); color:var(--c-slate); margin-bottom:var(--sp-8); line-height:1.7">
+          For a detailed transport quote, use our <a href="book.html" style="color:var(--c-gold)">full booking form</a>. For general enquiries, use the form below.
+        </p>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-5)">
+            <div class="contact-form-field">
+              <label for="c-name">Full Name</label>
+              <input type="text" id="c-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="contact-form-field">
+              <label for="c-company">Company</label>
+              <input type="text" id="c-company" name="company" placeholder="Organisation">
+            </div>
+          </div>
+          <div class="contact-form-field">
+            <label for="c-email">Email Address</label>
+            <input type="email" id="c-email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="contact-form-field">
+            <label for="c-phone">Phone Number</label>
+            <input type="tel" id="c-phone" name="phone" placeholder="+27 xx xxx xxxx" required>
+          </div>
+          <div class="contact-form-field">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" placeholder="Tell us about your transport requirement..." required></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn--gold btn--lg btn--full" id="contact-submit">Send Enquiry</button>
+          </div>
+          <p id="contact-confirm" style="display:none; color:var(--c-gold); font-family:var(--f-label); font-size:var(--fs-sm); text-align:center; padding:var(--sp-4); border:1px solid var(--c-gold-border); border-radius:var(--r-md);">
+            Thank you — we've received your enquiry and will be in touch shortly.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><span class="footer__logo-primary">QuickRide</span><span class="footer__logo-secondary">Africa</span></a>
+        <p class="footer__tagline">Professional Ground Transportation &amp; Ground Handling Services Across Southern Africa.</p>
+        <p class="footer__services-tag">Airport Transfers · Corporate Transport · Chauffeur Services · Ground Handling · Conference Transport · Shuttle Services · Group Transport</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links">
+          <li><a href="services.html#airport"   class="footer__link">Airport Transfers</a></li>
+          <li><a href="services.html#chauffeur" class="footer__link">Chauffeur Services</a></li>
+          <li><a href="services.html#corporate" class="footer__link">Corporate Transport</a></li>
+          <li><a href="services.html#events"    class="footer__link">Event Transport</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <ul class="footer__links">
+          <li><a href="about.html"     class="footer__link">About Us</a></li>
+          <li><a href="fleet.html"     class="footer__link">Fleet</a></li>
+          <li><a href="corporate.html" class="footer__link">Corporate Accounts</a></li>
+          <li><a href="faq.html"       class="footer__link">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item"><span class="footer__contact-label">Phone</span><span class="footer__contact-value"><a href="tel:+27742705488">+27 74 270 5488</a></span></div>
+          <div class="footer__contact-item"><span class="footer__contact-label">Email</span><span class="footer__contact-value"><a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a></span></div>
+          <div class="footer__contact-item"><span class="footer__contact-label">Operations</span><span class="footer__contact-value">24/7 for confirmed bookings</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-label">Google</span><span class="footer__contact-value"><a href="https://maps.app.goo.gl/8XifBrcSpeb7UvFg8" target="_blank" rel="noopener noreferrer">View on Google Maps</a></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 QuickRide Africa. All rights reserved.</p>
+      <div class="footer__legal-links">
+        <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+        <a href="terms.html"   class="footer__legal-link">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script>
+  // Simple contact form submit
+  (function () {
+    var form    = document.getElementById('contact-form');
+    var confirm = document.getElementById('contact-confirm');
+    var btn     = document.getElementById('contact-submit');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      // Simulate async — replace with real endpoint
+      setTimeout(function () {
+        form.style.display = 'none';
+        confirm.style.display = 'block';
+      }, 800);
+    });
+  })();
+</script>
+</body>
+</html>

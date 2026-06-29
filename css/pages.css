@@ -1,0 +1,497 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   QuickRide Africa — Page-Specific Section Styles
+   Hero · Home sections · Inner page sections
+───────────────────────────────────────────────────────────────────────── */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME HERO — full-screen cinematic
+═══════════════════════════════════════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--c-ink);
+}
+
+/* Background image */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+/* Multi-layer overlay: centred vignette */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(10,12,15,0.35) 0%, rgba(10,12,15,0.75) 100%),
+    linear-gradient(to top, rgba(10,12,15,0.70) 0%, transparent 60%);
+}
+
+/* Content layer */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: calc(var(--nav-h) + 2rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  margin-bottom: var(--sp-5);
+}
+
+.hero__headline {
+  color: var(--c-pearl);
+  margin-bottom: var(--sp-6);
+}
+
+.hero__sub {
+  font-size: clamp(var(--fs-base), 1.5vw, var(--fs-md));
+  color: rgba(232, 237, 242, 0.75);
+  max-width: 52ch;
+  line-height: 1.85;
+  margin: 0 auto var(--sp-10);
+}
+
+.hero__ctas {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--sp-8);
+  right: var(--container-pad);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--c-gold));
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+.hero__scroll-label {
+  font-family: var(--f-label);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-slate);
+  writing-mode: vertical-lr;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+  50%       { opacity: 1;   transform: scaleY(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME — INTRO SECTION
+═══════════════════════════════════════════════════════════════════════════ */
+
+.intro-section .split-grid__text-col .eyebrow { margin-bottom: var(--sp-4); }
+.intro-section .split-grid__text-col .heading  { color: var(--c-pearl); margin-bottom: var(--sp-5); }
+.intro-section .split-grid__text-col .body-lead {
+  color: var(--c-slate);
+  margin-bottom: var(--sp-8);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME — SERVICES SECTION (light/bone background)
+═══════════════════════════════════════════════════════════════════════════ */
+
+.services-section .section-header .heading { color: var(--c-on-light); }
+.services-section .section-header .body-lead { color: var(--c-muted); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME — WHY CHOOSE US
+═══════════════════════════════════════════════════════════════════════════ */
+
+.values-section .section-header .heading { color: var(--c-pearl); }
+.values-section .section-header .body-lead { color: var(--c-slate); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME — FLEET PREVIEW (horizontal gallery wrapper)
+═══════════════════════════════════════════════════════════════════════════ */
+
+.fleet-section .section-header .heading { color: var(--c-pearl); }
+.fleet-section .section-header .body-lead { color: var(--c-slate); }
+
+.fleet-section__gallery-wrap {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+}
+
+/* Fade edges */
+.fleet-section__gallery-wrap::before,
+.fleet-section__gallery-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.fleet-section__gallery-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--c-midnight), transparent);
+}
+.fleet-section__gallery-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--c-midnight), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME — INDUSTRIES SERVED
+═══════════════════════════════════════════════════════════════════════════ */
+
+.industries-section .section-header .heading { color: var(--c-on-light); }
+.industries-section .section-header .body-lead { color: var(--c-muted); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ABOUT — VALUES LIST
+═══════════════════════════════════════════════════════════════════════════ */
+
+.values-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-6) var(--sp-8);
+  padding-top: var(--sp-8);
+}
+
+.value-item {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+.value-item__dot {
+  flex-shrink: 0;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  margin-top: 8px;
+}
+
+.value-item__label {
+  font-family: var(--f-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--c-pearl);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SERVICES PAGE — detailed service sections
+═══════════════════════════════════════════════════════════════════════════ */
+
+.service-detail {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid var(--c-divider-dark);
+}
+.service-detail:last-child { border-bottom: none; }
+
+.service-detail__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+
+.service-detail__number {
+  font-family: var(--f-label);
+  font-size: var(--fs-xl);
+  font-weight: 300;
+  color: var(--c-gold);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.service-detail__title {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
+  color: var(--c-pearl);
+  line-height: 1.1;
+}
+
+.service-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.service-detail__body {
+  font-size: var(--fs-base);
+  color: var(--c-slate);
+  line-height: 1.85;
+  margin-bottom: var(--sp-6);
+}
+
+.ideal-for {
+  margin-top: var(--sp-5);
+}
+
+.ideal-for__label {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: var(--sp-4);
+}
+
+.ideal-for__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.ideal-for__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--c-on-dark);
+}
+.ideal-for__item::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1px;
+  background: var(--c-gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .service-detail__grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FLEET PAGE — vehicle grid
+═══════════════════════════════════════════════════════════════════════════ */
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+.vehicle-card {
+  background: var(--c-midnight);
+  border: 1px solid var(--c-divider-dark);
+  border-radius: var(--r-md);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  transition:
+    border-color var(--dur-fast),
+    background   var(--dur-fast);
+}
+.vehicle-card:hover {
+  border-color: var(--c-gold-border);
+  background: var(--c-navy);
+}
+
+.vehicle-card__icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vehicle-card__icon svg {
+  width: 28px; height: 28px;
+  stroke: var(--c-gold);
+  stroke-width: 1.25;
+  fill: none;
+}
+
+.vehicle-card__name {
+  font-family: var(--f-display);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  color: var(--c-pearl);
+  line-height: 1.2;
+}
+.vehicle-card__capacity {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  color: var(--c-slate);
+  margin-top: var(--sp-1);
+}
+
+@media (max-width: 768px) { .vehicle-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .vehicle-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CORPORATE PAGE — benefits list
+═══════════════════════════════════════════════════════════════════════════ */
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.benefit-item {
+  display: flex;
+  gap: var(--sp-5);
+  align-items: flex-start;
+  padding: var(--sp-6);
+  border: 1px solid var(--c-divider-dark);
+  border-radius: var(--r-md);
+  background: var(--c-midnight);
+  transition: border-color var(--dur-fast);
+}
+.benefit-item:hover { border-color: var(--c-gold-border); }
+
+.benefit-item__icon {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  background: var(--c-gold-muted);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit-item__icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--c-gold);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.benefit-item__title {
+  font-family: var(--f-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--c-pearl);
+  margin-bottom: var(--sp-2);
+}
+.benefit-item__body {
+  font-size: var(--fs-sm);
+  color: var(--c-slate);
+  line-height: 1.75;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTACT PAGE
+═══════════════════════════════════════════════════════════════════════════ */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.contact-detail {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+.contact-detail__icon {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  background: var(--c-gold-muted);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-detail__icon svg {
+  width: 16px; height: 16px;
+  stroke: var(--c-gold);
+  stroke-width: 1.5;
+  fill: none;
+}
+.contact-detail__label {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: var(--sp-1);
+}
+.contact-detail__value {
+  font-size: var(--fs-base);
+  color: var(--c-pearl);
+  line-height: 1.5;
+}
+.contact-detail__value a {
+  color: var(--c-pearl);
+  transition: color var(--dur-fast);
+}
+.contact-detail__value a:hover { color: var(--c-gold); }
+
+.contact-actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REVEAL ANIMATION SYSTEM
+   Works with js/animations.js via IntersectionObserver
+═══════════════════════════════════════════════════════════════════════════ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity   var(--dur-slow)  var(--ease-out),
+    transform var(--dur-slow)  var(--ease-out);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+[data-reveal][data-delay="80"]  { transition-delay: 80ms; }
+[data-reveal][data-delay="100"] { transition-delay: 100ms; }
+[data-reveal][data-delay="150"] { transition-delay: 150ms; }
+[data-reveal][data-delay="160"] { transition-delay: 160ms; }
+[data-reveal][data-delay="200"] { transition-delay: 200ms; }
+[data-reveal][data-delay="240"] { transition-delay: 240ms; }
+[data-reveal][data-delay="300"] { transition-delay: 300ms; }
+[data-reveal][data-delay="320"] { transition-delay: 320ms; }
+[data-reveal][data-delay="400"] { transition-delay: 400ms; }
+[data-reveal][data-delay="500"] { transition-delay: 500ms; }
+[data-reveal][data-delay="600"] { transition-delay: 600ms; }

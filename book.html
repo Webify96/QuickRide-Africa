@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Quote | QuickRide Africa Transport Booking</title>
+  <meta name="description" content="Submit your transport request to QuickRide Africa. Share your journey details, passenger numbers, and vehicle preference for a fast quotation.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://quickride.africa/book.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav site-nav--solid" id="site-nav" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-primary">QuickRide</span><span class="nav__logo-secondary">Africa</span></a>
+    <ul class="nav__links" role="list">
+      <li><a href="about.html"     class="nav__link">About</a></li>
+      <li><a href="services.html"  class="nav__link">Services</a></li>
+      <li><a href="fleet.html"     class="nav__link">Fleet</a></li>
+      <li><a href="corporate.html" class="nav__link">Corporate</a></li>
+      <li><a href="faq.html"       class="nav__link">FAQ</a></li>
+      <li><a href="contact.html"   class="nav__link">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="book.html" class="btn btn--gold nav__cta">Request a Quote</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="nav-mobile">
+  <ul class="nav__mobile-links" role="list">
+    <li><a href="about.html"     class="nav__mobile-link">About</a></li>
+    <li><a href="services.html"  class="nav__mobile-link">Services</a></li>
+    <li><a href="fleet.html"     class="nav__mobile-link">Fleet</a></li>
+    <li><a href="corporate.html" class="nav__mobile-link">Corporate</a></li>
+    <li><a href="faq.html"       class="nav__mobile-link">FAQ</a></li>
+    <li><a href="contact.html"   class="nav__mobile-link">Contact</a></li>
+  </ul>
+  <div class="nav__mobile-cta"><a href="book.html" class="btn btn--gold btn--lg">Request a Quote</a></div>
+  <div class="nav__mobile-contact">
+    <a href="tel:+27742705488">+27 74 270 5488</a>
+    <a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a>
+  </div>
+</div>
+
+<!-- FORM BODY -->
+<main class="form-page">
+  <div class="form-wrap">
+
+    <!-- Header -->
+    <div class="form-header">
+      <p class="eyebrow">Request a Quote</p>
+      <h1 class="form-header__title">Tell us about your journey.</h1>
+      <p class="form-header__sub">Fill in your details below and we'll respond with the best transport option. Scheduled trips and last-minute bookings accommodated subject to availability.</p>
+    </div>
+
+    <!-- Step progress -->
+    <div class="form-stepper" aria-label="Form progress" role="list">
+      <div class="step-dot" role="listitem" aria-label="Step 1: Contact">
+        <div class="step-dot__circle" aria-hidden="true">1</div>
+        <span class="step-dot__label">Contact</span>
+      </div>
+      <div class="step-dot" role="listitem" aria-label="Step 2: Journey">
+        <div class="step-dot__circle" aria-hidden="true">2</div>
+        <span class="step-dot__label">Journey</span>
+      </div>
+      <div class="step-dot" role="listitem" aria-label="Step 3: Passengers">
+        <div class="step-dot__circle" aria-hidden="true">3</div>
+        <span class="step-dot__label">Passengers</span>
+      </div>
+      <div class="step-dot" role="listitem" aria-label="Step 4: Vehicle">
+        <div class="step-dot__circle" aria-hidden="true">4</div>
+        <span class="step-dot__label">Vehicle</span>
+      </div>
+      <div class="step-dot" role="listitem" aria-label="Step 5: Flight info">
+        <div class="step-dot__circle" aria-hidden="true">5</div>
+        <span class="step-dot__label">Flight</span>
+      </div>
+      <div class="step-dot" role="listitem" aria-label="Step 6: Additional">
+        <div class="step-dot__circle" aria-hidden="true">6</div>
+        <span class="step-dot__label">Notes</span>
+      </div>
+    </div>
+
+    <!-- THE FORM -->
+    <form id="quote-form" novalidate>
+
+      <!-- ── STEP 1: Contact Details ──────────────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Contact details">
+        <h2 class="step-title">Contact Details</h2>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Your full name" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="company">Company Name <span class="field-opt">optional</span></label>
+            <input type="text" id="company" name="company" placeholder="Organisation">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+27 xx xxx xxxx" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="whatsapp">WhatsApp Number <span class="field-opt">if different</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+27 xx xxx xxxx">
+          </div>
+          <div class="form-field">
+            <label for="country">Country of Residence</label>
+            <select id="country" name="country" required>
+              <option value="">Select country</option>
+              <option value="ZA">South Africa</option>
+              <option value="ZW">Zimbabwe</option>
+              <option value="ZM">Zambia</option>
+              <option value="BW">Botswana</option>
+              <option value="MZ">Mozambique</option>
+              <option value="NA">Namibia</option>
+              <option value="LS">Lesotho</option>
+              <option value="SZ">Eswatini</option>
+              <option value="MW">Malawi</option>
+              <option value="TZ">Tanzania</option>
+              <option value="KE">Kenya</option>
+              <option value="GB">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-field" style="margin-bottom:var(--sp-6)">
+          <label>Preferred Contact Method</label>
+          <div class="contact-method-options">
+            <div class="contact-method-opt">
+              <input type="radio" name="contact-method" id="cm-email" value="email" required>
+              <label class="contact-method-opt__label" for="cm-email">Email</label>
+            </div>
+            <div class="contact-method-opt">
+              <input type="radio" name="contact-method" id="cm-phone" value="phone">
+              <label class="contact-method-opt__label" for="cm-phone">Phone</label>
+            </div>
+            <div class="contact-method-opt">
+              <input type="radio" name="contact-method" id="cm-whatsapp" value="whatsapp">
+              <label class="contact-method-opt__label" for="cm-whatsapp">WhatsApp</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="form-nav__back" disabled aria-disabled="true">← Back</button>
+          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 2: Journey Details ──────────────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Journey details">
+        <h2 class="step-title">Journey Details</h2>
+
+        <div class="form-row form-row--full" style="margin-bottom:var(--sp-5)">
+          <div class="form-field">
+            <label for="service-required">Service Required</label>
+            <select id="service-required" name="service-required" required>
+              <option value="">Select a service</option>
+              <option value="airport-transfer">Airport Transfer</option>
+              <option value="chauffeur">Chauffeur Service</option>
+              <option value="corporate-transport">Corporate Transport</option>
+              <option value="event-conference">Event &amp; Conference Transport</option>
+              <option value="shuttle">Shuttle Service</option>
+              <option value="ground-handling">Ground Handling &amp; Coordination</option>
+            </select>
+            <span class="field-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="pickup-date">Pickup Date</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="pickup-time">Pickup Time</label>
+            <input type="time" id="pickup-time" name="pickup-time" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row form-row--full">
+          <div class="form-field">
+            <label for="pickup-location">Pickup Location</label>
+            <input type="text" id="pickup-location" name="pickup-location" placeholder="Address, airport, hotel…" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row form-row--full">
+          <div class="form-field">
+            <label for="dropoff-location">Drop-off Location</label>
+            <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Address, airport, hotel…" required>
+            <span class="field-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-field" style="margin-bottom:var(--sp-5)">
+          <label for="return-journey">Return Journey Required</label>
+          <select id="return-journey" name="return-journey">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+
+        <!-- Return fields (shown conditionally) -->
+        <div id="return-fields" style="display:none">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="return-date">Return Date</label>
+              <input type="date" id="return-date" name="return-date">
+            </div>
+            <div class="form-field">
+              <label for="return-time">Return Time</label>
+              <input type="time" id="return-time" name="return-time">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="form-nav__back" data-back>← Back</button>
+          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 3: Passenger Details ───────────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Passenger details">
+        <h2 class="step-title">Passenger Details</h2>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="num-passengers">Number of Passengers</label>
+            <select id="num-passengers" name="num-passengers" required>
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8-13">8–13</option>
+              <option value="14+">14+</option>
+            </select>
+            <span class="field-error" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="num-children">Number of Children <span class="field-opt">optional</span></label>
+            <select id="num-children" name="num-children">
+              <option value="0">None</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4+">4+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="num-large-bags">Number of Large Bags</label>
+            <select id="num-large-bags" name="num-large-bags">
+              <option value="0">None</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="num-hand-luggage">Number of Hand Luggage Items</label>
+            <select id="num-hand-luggage" name="num-hand-luggage">
+              <option value="0">None</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4+">4+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="form-nav__back" data-back>← Back</button>
+          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 4: Vehicle Required ────────────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Vehicle preference">
+        <h2 class="step-title">Vehicle Preference</h2>
+        <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-bottom:var(--sp-6)">Select your preferred vehicle type, or choose "Not sure" and we'll recommend the best option.</p>
+
+        <div class="vehicle-options" role="group" aria-label="Vehicle options">
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-sedan" value="sedan">
+            <label class="vehicle-option__label" for="v-sedan">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-4 12h8a2 2 0 002-2v-5a2 2 0 00-2-2h-1l-2-3h-6l-2 3H9a2 2 0 00-2 2v5a2 2 0 002 2z"/></svg>
+              <span class="vehicle-option__name">Sedan</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-exec-sedan" value="executive-sedan">
+            <label class="vehicle-option__label" for="v-exec-sedan">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-4 12h8a2 2 0 002-2v-5a2 2 0 00-2-2h-1l-2-3h-6l-2 3H9a2 2 0 00-2 2v5a2 2 0 002 2z"/><circle cx="12" cy="17" r="1"/></svg>
+              <span class="vehicle-option__name">Executive Sedan</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-suv" value="suv">
+            <label class="vehicle-option__label" for="v-suv">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span class="vehicle-option__name">SUV</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-exec-suv" value="executive-suv">
+            <label class="vehicle-option__label" for="v-exec-suv">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M8 3v13"/></svg>
+              <span class="vehicle-option__name">Executive SUV</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-mpv" value="mpv">
+            <label class="vehicle-option__label" for="v-mpv">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="20" height="14" rx="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="vehicle-option__name">MPV</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-7seater" value="7-seater">
+            <label class="vehicle-option__label" for="v-7seater">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="20" height="14" rx="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 4v14"/></svg>
+              <span class="vehicle-option__name">7-Seater</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-13seater" value="13-seater">
+            <label class="vehicle-option__label" for="v-13seater">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="18" height="14" rx="2"/><path d="M19 8h2a2 2 0 012 2v7h-4"/><circle cx="5" cy="19" r="2"/><circle cx="15" cy="19" r="2"/></svg>
+              <span class="vehicle-option__name">13-Seater Van</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-minibus" value="minibus">
+            <label class="vehicle-option__label" for="v-minibus">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="22" height="14" rx="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+              <span class="vehicle-option__name">Minibus</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-coach" value="coach">
+            <label class="vehicle-option__label" for="v-coach">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="22" height="14" rx="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 3v14M14 3v14"/></svg>
+              <span class="vehicle-option__name">Coach</span>
+            </label>
+          </div>
+
+          <div class="vehicle-option">
+            <input type="radio" name="vehicle" id="v-unsure" value="not-sure" checked>
+            <label class="vehicle-option__label" for="v-unsure">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+              <span class="vehicle-option__name">Not Sure</span>
+            </label>
+          </div>
+
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="form-nav__back" data-back>← Back</button>
+          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 5: Flight Information ──────────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Flight information">
+        <h2 class="step-title">Flight Information</h2>
+        <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-bottom:var(--sp-6)">We use your flight details to monitor arrivals and adjust your pickup time accordingly.</p>
+
+        <div id="flight-section" class="flight-section is-visible">
+          <p class="flight-section__label">Flight Details</p>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="airline">Airline</label>
+              <input type="text" id="airline" name="airline" placeholder="e.g. South African Airways">
+            </div>
+            <div class="form-field">
+              <label for="flight-number">Flight Number</label>
+              <input type="text" id="flight-number" name="flight-number" placeholder="e.g. SA 451">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="arrival-airport">Arrival Airport</label>
+              <input type="text" id="arrival-airport" name="arrival-airport" placeholder="e.g. OR Tambo International">
+            </div>
+            <div class="form-field">
+              <label for="origin-airport">Origin Airport</label>
+              <input type="text" id="origin-airport" name="origin-airport" placeholder="e.g. Heathrow, London">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="arrival-date">Arrival Date</label>
+              <input type="date" id="arrival-date" name="arrival-date">
+            </div>
+            <div class="form-field">
+              <label for="arrival-time">Arrival Time</label>
+              <input type="time" id="arrival-time" name="arrival-time">
+            </div>
+          </div>
+
+          <div class="form-field" style="margin-bottom:var(--sp-6)">
+            <label>Meet-and-Greet Required</label>
+            <div class="contact-method-options">
+              <div class="contact-method-opt">
+                <input type="radio" name="meet-greet" id="mg-yes" value="yes">
+                <label class="contact-method-opt__label" for="mg-yes">Yes</label>
+              </div>
+              <div class="contact-method-opt">
+                <input type="radio" name="meet-greet" id="mg-no" value="no" checked>
+                <label class="contact-method-opt__label" for="mg-no">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-top:var(--sp-2);">
+          If this is not an airport transfer, you can skip this step.
+        </p>
+
+        <div class="form-nav">
+          <button type="button" class="form-nav__back" data-back>← Back</button>
+          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
+        </div>
+      </fieldset>
+
+      <!-- ── STEP 6: Additional Information ─────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Additional information">
+        <h2 class="step-title">Additional Information</h2>
+
+        <div class="form-row form-row--full">
+          <div class="form-field">
+            <label for="special-requests">Special Requests <span class="field-opt">optional</span></label>
+            <textarea id="special-requests" name="special-requests" placeholder="Any special requirements, preferences, or requests…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row form-row--full">
+          <div class="form-field">
+            <label for="special-instructions">Special Instructions <span class="field-opt">optional</span></label>
+            <textarea id="special-instructions" name="special-instructions" placeholder="Any specific instructions for our driver or coordination team…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-field" style="margin-bottom:var(--sp-5)">
+          <label for="itinerary">Upload Itinerary <span class="field-opt">optional</span></label>
+          <input type="file" id="itinerary" name="itinerary" accept=".pdf,.doc,.docx,.xlsx,.xls"
+            style="background:rgba(255,255,255,0.03);border:1px solid var(--c-divider-dark);border-radius:var(--r-sm);padding:0.65em 1em;color:var(--c-slate);">
+        </div>
+
+        <p style="font-size:var(--fs-sm); color:rgba(138,155,181,0.5); line-height:1.7; margin-bottom:var(--sp-8);">
+          By submitting this form you confirm you have read and agree to our <a href="privacy.html" style="color:var(--c-gold)">Privacy Policy</a> and <a href="terms.html" style="color:var(--c-gold)">Terms and Conditions</a>.
+        </p>
+
+        <div class="form-nav">
+          <button type="button" class="form-nav__back" data-back>← Back</button>
+          <button type="button" class="btn btn--gold btn--lg" data-next>Submit Request</button>
+        </div>
+      </fieldset>
+
+    </form>
+
+    <!-- CONFIRMATION (shown after submit) -->
+    <div class="form-confirmation" id="form-confirmation">
+      <div class="form-confirmation__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="form-confirmation__title">Request received.</h2>
+      <p class="form-confirmation__body">
+        Thank you for contacting QuickRide Africa. We have received your transport request and our team will review the details and send your quotation as soon as possible.
+      </p>
+      <div style="display:flex; gap:var(--sp-4); justify-content:center; flex-wrap:wrap;">
+        <a href="index.html"   class="btn btn--outline-gold">Return Home</a>
+        <a href="contact.html" class="btn btn--gold">Contact Us</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><span class="footer__logo-primary">QuickRide</span><span class="footer__logo-secondary">Africa</span></a>
+        <p class="footer__tagline">Professional Ground Transportation &amp; Ground Handling Services Across Southern Africa.</p>
+        <p class="footer__services-tag">Airport Transfers · Corporate Transport · Chauffeur Services · Ground Handling · Conference Transport · Shuttle Services · Group Transport</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links">
+          <li><a href="services.html#airport"   class="footer__link">Airport Transfers</a></li>
+          <li><a href="services.html#chauffeur" class="footer__link">Chauffeur Services</a></li>
+          <li><a href="services.html#corporate" class="footer__link">Corporate Transport</a></li>
+          <li><a href="services.html#events"    class="footer__link">Event Transport</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Need Help?</p>
+        <ul class="footer__links">
+          <li><a href="faq.html"     class="footer__link">FAQ</a></li>
+          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          <li><a href="fleet.html"   class="footer__link">View Fleet</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item"><span class="footer__contact-label">Phone</span><span class="footer__contact-value"><a href="tel:+27742705488">+27 74 270 5488</a></span></div>
+          <div class="footer__contact-item"><span class="footer__contact-label">Email</span><span class="footer__contact-value"><a href="mailto:mpoyi@quickride.africa">mpoyi@quickride.africa</a></span></div>
+          <div class="footer__contact-item"><span class="footer__contact-label">Operations</span><span class="footer__contact-value">24/7 for confirmed bookings</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-label">Google</span><span class="footer__contact-value"><a href="https://maps.app.goo.gl/8XifBrcSpeb7UvFg8" target="_blank" rel="noopener noreferrer">View on Google Maps</a></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 QuickRide Africa. All rights reserved.</p>
+      <div class="footer__legal-links">
+        <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+        <a href="terms.html"   class="footer__legal-link">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

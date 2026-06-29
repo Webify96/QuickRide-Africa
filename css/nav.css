@@ -1,0 +1,251 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   QuickRide Africa — Navigation
+   Transparent on hero, transitions to dark on scroll.
+   Mobile: full-screen overlay.
+───────────────────────────────────────────────────────────────────────── */
+
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  transition:
+    background var(--dur-base) var(--ease-out),
+    box-shadow  var(--dur-base) var(--ease-out),
+    backdrop-filter var(--dur-base) var(--ease-out);
+}
+
+/* Transparent state (over hero) */
+.site-nav--transparent {
+  background: transparent;
+}
+
+/* Scrolled state */
+.site-nav--scrolled {
+  background: rgba(10, 12, 15, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--c-divider-dark);
+}
+
+/* Solid state (inner pages with no hero) */
+.site-nav--solid {
+  background: var(--c-ink);
+  box-shadow: 0 1px 0 var(--c-divider-dark);
+}
+
+/* ─── Inner layout ─────────────────────────────────────────────────────── */
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-8);
+}
+
+/* ─── Logo ─────────────────────────────────────────────────────────────── */
+.nav__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+  color: var(--c-pearl);
+  transition: opacity var(--dur-fast);
+}
+.nav__logo:hover { opacity: 0.8; }
+
+.nav__logo-primary {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+}
+.nav__logo-secondary {
+  font-family: var(--f-label);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  position: relative;
+  top: -2px;
+}
+
+/* ─── Desktop nav links ─────────────────────────────────────────────────── */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  list-style: none;
+}
+
+.nav__link {
+  font-family: var(--f-label);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(232, 237, 242, 0.75);
+  transition: color var(--dur-fast);
+  position: relative;
+}
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--c-gold);
+  transition: width var(--dur-base) var(--ease-out);
+}
+.nav__link:hover,
+.nav__link--active {
+  color: var(--c-pearl);
+}
+.nav__link:hover::after,
+.nav__link--active::after {
+  width: 100%;
+}
+
+/* ─── Actions (CTA + hamburger) ─────────────────────────────────────────── */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  flex-shrink: 0;
+}
+
+/* ─── Hamburger toggle ───────────────────────────────────────────────────── */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav__bar {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--c-pearl);
+  transform-origin: center;
+  transition:
+    transform  var(--dur-base) var(--ease-out),
+    opacity    var(--dur-fast),
+    width      var(--dur-base) var(--ease-out);
+}
+
+/* Open state — animate to X */
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ─── Mobile full-screen menu ───────────────────────────────────────────── */
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--c-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(var(--nav-h) + var(--sp-8)) var(--container-pad) var(--sp-12);
+  transform: translateX(100%);
+  transition: transform var(--dur-slow) var(--ease-out);
+  pointer-events: none;
+}
+
+.nav__mobile.is-open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.nav__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  width: 100%;
+}
+
+.nav__mobile-link {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 300;
+  color: var(--c-pearl);
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity   var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    color     var(--dur-fast);
+}
+.nav__mobile-link:hover { color: var(--c-gold); }
+
+.nav__mobile.is-open .nav__mobile-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger via CSS */
+.nav__mobile.is-open .nav__mobile-link:nth-child(1) { transition-delay: 60ms; }
+.nav__mobile.is-open .nav__mobile-link:nth-child(2) { transition-delay: 100ms; }
+.nav__mobile.is-open .nav__mobile-link:nth-child(3) { transition-delay: 140ms; }
+.nav__mobile.is-open .nav__mobile-link:nth-child(4) { transition-delay: 180ms; }
+.nav__mobile.is-open .nav__mobile-link:nth-child(5) { transition-delay: 220ms; }
+.nav__mobile.is-open .nav__mobile-link:nth-child(6) { transition-delay: 260ms; }
+
+.nav__mobile-cta {
+  margin-top: var(--sp-10);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--dur-base) var(--ease-out) 300ms, transform var(--dur-base) var(--ease-out) 300ms;
+}
+.nav__mobile.is-open .nav__mobile-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav__mobile-contact {
+  margin-top: auto;
+  padding-top: var(--sp-8);
+  border-top: 1px solid var(--c-divider-dark);
+  width: 100%;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out) 350ms;
+}
+.nav__mobile.is-open .nav__mobile-contact { opacity: 1; }
+
+.nav__mobile-contact a {
+  display: block;
+  font-family: var(--f-label);
+  font-size: var(--fs-sm);
+  color: var(--c-slate);
+  margin-bottom: var(--sp-2);
+  transition: color var(--dur-fast);
+}
+.nav__mobile-contact a:hover { color: var(--c-gold); }
+
+/* ─── Responsive breakpoints ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+  .nav__cta   { display: none; }
+  .nav__toggle { display: flex; }
+}
+
+@media (min-width: 901px) {
+  .nav__mobile { display: none; }
+}
