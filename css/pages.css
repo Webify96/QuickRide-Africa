@@ -499,3 +499,82 @@
 [data-reveal][data-delay="400"] { transition-delay: 400ms; }
 [data-reveal][data-delay="500"] { transition-delay: 500ms; }
 [data-reveal][data-delay="600"] { transition-delay: 600ms; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHTBOX — fleet image viewer
+═══════════════════════════════════════════════════════════════════════════ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease-out), visibility 0s 0.35s;
+}
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s var(--ease-out), visibility 0s 0s;
+}
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 15, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.lightbox__figure {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  max-width: min(90vw, 1100px);
+  transform: scale(0.94);
+  transition: transform 0.35s var(--ease-out);
+}
+.lightbox.is-open .lightbox__figure {
+  transform: scale(1);
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.lightbox__caption {
+  font-family: var(--f-label);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232, 237, 242, 0.5);
+}
+.lightbox__close {
+  position: absolute;
+  top: var(--sp-5);
+  right: var(--sp-5);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-pearl);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.1);
+}
+.fleet-card { cursor: pointer; }
+.fleet-card:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 2px; }
