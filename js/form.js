@@ -170,7 +170,7 @@
     const btn = steps[current].querySelector('[data-next]');
     if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
 
-    fetch('https://formspree.io/f/mvzjwbzg', {
+    fetch('https://formspree.io/f/mykqnnqz', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
