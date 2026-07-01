@@ -22,9 +22,14 @@
 
 .footer__logo {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.35em;
   margin-bottom: var(--sp-5);
+}
+.footer__logo-img {
+  height: 208px;
+  width: auto;
+  display: block;
 }
 .footer__logo-primary {
   font-family: var(--f-display);
