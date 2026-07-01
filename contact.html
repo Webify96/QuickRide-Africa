@@ -293,11 +293,24 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      // Simulate async — replace with real endpoint
-      setTimeout(function () {
-        form.style.display = 'none';
-        confirm.style.display = 'block';
-      }, 800);
+      fetch('https://formspree.io/f/xrewyabp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          confirm.style.display = 'block';
+        } else {
+          btn.textContent = 'Send Enquiry';
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      }).catch(function () {
+        btn.textContent = 'Send Enquiry';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly.');
+      });
     });
   })();
 </script>

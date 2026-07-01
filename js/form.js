@@ -167,11 +167,28 @@
   function submitForm() {
     if (!validate(current)) return;
 
-    form.style.display = 'none';
-    if (confirmation) {
-      confirmation.classList.add('is-visible');
-      confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const btn = steps[current].querySelector('[data-next]');
+    if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+
+    fetch('https://formspree.io/f/mvzjwbzg', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function (res) {
+      if (res.ok) {
+        form.style.display = 'none';
+        if (confirmation) {
+          confirmation.classList.add('is-visible');
+          confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        if (btn) { btn.textContent = 'Submit Request'; btn.disabled = false; }
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    }).catch(function () {
+      if (btn) { btn.textContent = 'Submit Request'; btn.disabled = false; }
+      alert('Something went wrong. Please try again or email us directly.');
+    });
   }
 
   /* ─── Initialise first step ──────────────────────────────────────────── */
