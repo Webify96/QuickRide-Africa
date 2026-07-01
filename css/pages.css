@@ -501,6 +501,89 @@
 [data-reveal][data-delay="600"] { transition-delay: 600ms; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   GOOGLE REVIEWS
+═══════════════════════════════════════════════════════════════════════════ */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-12);
+}
+
+@media (max-width: 900px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+.review-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--c-divider-dark);
+  border-radius: var(--r-md);
+  padding: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+.review-card:hover { border-color: rgba(184, 146, 42, 0.35); }
+
+.review-card__stars {
+  display: flex;
+  gap: 3px;
+}
+.review-card__star {
+  width: 15px;
+  height: 15px;
+  fill: var(--c-gold);
+  flex-shrink: 0;
+}
+
+.review-card__body {
+  font-size: var(--fs-base);
+  color: rgba(232, 237, 242, 0.82);
+  line-height: 1.8;
+  flex: 1;
+}
+
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--c-divider-dark);
+}
+.review-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(184, 146, 42, 0.12);
+  color: var(--c-gold);
+  font-family: var(--f-label);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+.review-card__name {
+  font-family: var(--f-label);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-pearl);
+  letter-spacing: 0.02em;
+}
+.review-card__meta {
+  font-size: var(--fs-xs);
+  color: var(--c-slate);
+  margin-top: 2px;
+}
+
+.reviews-cta {
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    LIGHTBOX — fleet image viewer
 ═══════════════════════════════════════════════════════════════════════════ */
 
