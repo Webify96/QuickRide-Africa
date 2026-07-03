@@ -23,6 +23,76 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/footer.css">
+  <style>
+    /* ── Masonry gallery (fleet page only) ── */
+    .fleet-masonry-wrap {
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem) 0;
+    }
+    .fleet-masonry {
+      columns: 4 220px;
+      column-gap: 10px;
+    }
+    .fleet-masonry .fleet-card {
+      display: block;
+      width: 100%;
+      break-inside: avoid;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      background: #0a0c0f;
+      cursor: pointer;
+    }
+    .fleet-masonry .fleet-card__img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .fleet-masonry .fleet-card:hover .fleet-card__img {
+      transform: scale(1.06);
+    }
+    .fleet-masonry .fleet-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: #b8922a;
+      z-index: 3;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .fleet-masonry .fleet-card:hover::after {
+      transform: scaleX(1);
+    }
+    .fleet-masonry .fleet-card__label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.4rem 1.2rem 1.1rem;
+      background: linear-gradient(to top, rgba(5,7,10,0.9) 0%, transparent 100%);
+      font-family: var(--f-label);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-pearl);
+      z-index: 2;
+      transform: translateY(6px);
+      opacity: 0.7;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+    .fleet-masonry .fleet-card:hover .fleet-card__label {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    @media (max-width: 900px) {
+      .fleet-masonry { columns: 3 180px; }
+    }
+    @media (max-width: 600px) {
+      .fleet-masonry { columns: 2 140px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -185,8 +255,8 @@
       <h2 class="heading" style="color:var(--c-pearl)">Our vehicles</h2>
     </header>
   </div>
-  <div class="fleet-section__gallery-wrap">
-    <div class="fleet-gallery" role="list">
+  <div class="fleet-masonry-wrap">
+    <div class="fleet-masonry" role="list">
       <div class="fleet-card" role="listitem">
         <img src="img/5.jpeg" alt="Mercedes-Benz S-Class executive sedan — QuickRide Africa" class="fleet-card__img" loading="lazy">
         <div class="fleet-card__label">S-Class Executive Sedan</div>
@@ -315,11 +385,53 @@
       <path d="M18 6L6 18M6 6l12 12"/>
     </svg>
   </button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next image">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
   <figure class="lightbox__figure">
     <img class="lightbox__img" id="lightbox-img" src="" alt="">
     <figcaption class="lightbox__caption" id="lightbox-caption"></figcaption>
   </figure>
+  <div class="lightbox__counter" id="lightbox-counter"></div>
 </div>
+<style>
+  .lightbox__nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    border-radius: 50%;
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    backdrop-filter: blur(8px);
+  }
+  .lightbox__nav:hover { background: rgba(184,146,42,0.25); border-color: rgba(184,146,42,0.5); }
+  .lightbox__nav--prev { left: clamp(12px, 3vw, 32px); }
+  .lightbox__nav--next { right: clamp(12px, 3vw, 32px); }
+  .lightbox__counter {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    font-family: var(--f-label);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.45);
+  }
+</style>
 
 <script src="js/nav.js"></script>
 <script src="js/animations.js"></script>
@@ -330,13 +442,27 @@
   var lbCaption  = document.getElementById('lightbox-caption');
   var lbClose    = document.getElementById('lightbox-close');
   var lbBackdrop = document.getElementById('lightbox-backdrop');
+  var lbPrev     = document.getElementById('lightbox-prev');
+  var lbNext     = document.getElementById('lightbox-next');
+  var lbCounter  = document.getElementById('lightbox-counter');
   var lastFocus  = null;
+  var cards      = [];
+  var current    = 0;
 
-  function open(src, alt, caption) {
+  function show(index) {
+    current = (index + cards.length) % cards.length;
+    var card  = cards[current];
+    var img   = card.querySelector('.fleet-card__img');
+    var label = card.querySelector('.fleet-card__label');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = label ? label.textContent : '';
+    lbCounter.textContent = (current + 1) + ' / ' + cards.length;
+  }
+
+  function open(index) {
     lastFocus = document.activeElement;
-    lbImg.src = src;
-    lbImg.alt = alt;
-    lbCaption.textContent = caption;
+    show(index);
     lightbox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     lbClose.focus();
@@ -349,24 +475,36 @@
     if (lastFocus) lastFocus.focus();
   }
 
-  document.querySelectorAll('.fleet-card').forEach(function (card) {
-    var img   = card.querySelector('.fleet-card__img');
+  document.querySelectorAll('.fleet-card').forEach(function (card, i) {
+    cards.push(card);
     var label = card.querySelector('.fleet-card__label');
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', 'View ' + (label ? label.textContent : 'image') + ' full size');
-
-    function trigger() { open(img.src, img.alt, label ? label.textContent : ''); }
-    card.addEventListener('click', trigger);
+    card.addEventListener('click', function () { open(i); });
     card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
     });
   });
 
+  lbPrev.addEventListener('click', function () { show(current - 1); });
+  lbNext.addEventListener('click', function () { show(current + 1); });
   lbClose.addEventListener('click', close);
   lbBackdrop.addEventListener('click', close);
+
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape')      close();
+    if (e.key === 'ArrowLeft')   show(current - 1);
+    if (e.key === 'ArrowRight')  show(current + 1);
+  });
+
+  /* swipe support */
+  var touchStartX = 0;
+  lightbox.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+  lightbox.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? show(current + 1) : show(current - 1);
   });
 })();
 </script>
