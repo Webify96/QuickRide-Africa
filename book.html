@@ -87,28 +87,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Step progress -->
     <div class="form-stepper" aria-label="Form progress" role="list">
-      <div class="step-dot" role="listitem" aria-label="Step 1: Contact">
+      <div class="step-dot" role="listitem" aria-label="Step 1: Details">
         <div class="step-dot__circle" aria-hidden="true">1</div>
-        <span class="step-dot__label">Contact</span>
+        <span class="step-dot__label">Details</span>
       </div>
-      <div class="step-dot" role="listitem" aria-label="Step 2: Journey">
+      <div class="step-dot" role="listitem" aria-label="Step 2: Vehicle">
         <div class="step-dot__circle" aria-hidden="true">2</div>
-        <span class="step-dot__label">Journey</span>
-      </div>
-      <div class="step-dot" role="listitem" aria-label="Step 3: Passengers">
-        <div class="step-dot__circle" aria-hidden="true">3</div>
-        <span class="step-dot__label">Passengers</span>
-      </div>
-      <div class="step-dot" role="listitem" aria-label="Step 4: Vehicle">
-        <div class="step-dot__circle" aria-hidden="true">4</div>
         <span class="step-dot__label">Vehicle</span>
       </div>
-      <div class="step-dot" role="listitem" aria-label="Step 5: Flight info">
-        <div class="step-dot__circle" aria-hidden="true">5</div>
-        <span class="step-dot__label">Flight</span>
-      </div>
-      <div class="step-dot" role="listitem" aria-label="Step 6: Additional">
-        <div class="step-dot__circle" aria-hidden="true">6</div>
+      <div class="step-dot" role="listitem" aria-label="Step 3: Notes">
+        <div class="step-dot__circle" aria-hidden="true">3</div>
         <span class="step-dot__label">Notes</span>
       </div>
     </div>
@@ -116,9 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- THE FORM -->
     <form id="quote-form" novalidate>
 
-      <!-- ── STEP 1: Contact Details ──────────────────────────────────────── -->
-      <fieldset class="form-step" aria-label="Contact details">
-        <h2 class="step-title">Contact Details</h2>
+      <!-- ── STEP 1: Contact & Journey Details ────────────────────────────── -->
+      <fieldset class="form-step" aria-label="Contact and journey details">
+        <h2 class="step-title">Your Details &amp; Journey</h2>
 
         <div class="form-row">
           <div class="form-field">
@@ -191,92 +179,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
+        <div class="flight-section is-visible">
+          <p class="flight-section__label">Journey Details</p>
+
+          <div class="form-row form-row--full" style="margin-bottom:var(--sp-5)">
+            <div class="form-field">
+              <label for="service-required">Service Required</label>
+              <select id="service-required" name="service-required" required>
+                <option value="">Select a service</option>
+                <option value="airport-transfer">Airport Transfer</option>
+                <option value="chauffeur">Chauffeur Service</option>
+                <option value="corporate-transport">Corporate Transport</option>
+                <option value="event-conference">Event &amp; Conference Transport</option>
+                <option value="shuttle">Shuttle Service</option>
+                <option value="ground-handling">Ground Handling &amp; Coordination</option>
+              </select>
+              <span class="field-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="pickup-date">Pickup Date</label>
+              <input type="date" id="pickup-date" name="pickup-date" required>
+              <span class="field-error" role="alert"></span>
+            </div>
+            <div class="form-field">
+              <label for="pickup-time">Pickup Time</label>
+              <input type="time" id="pickup-time" name="pickup-time" required>
+              <span class="field-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row form-row--full">
+            <div class="form-field">
+              <label for="pickup-location">Pickup Location</label>
+              <input type="text" id="pickup-location" name="pickup-location" placeholder="Address, airport, hotel…" required>
+              <span class="field-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-row form-row--full">
+            <div class="form-field">
+              <label for="dropoff-location">Drop-off Location</label>
+              <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Address, airport, hotel…" required>
+              <span class="field-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-field" style="margin-bottom:var(--sp-5)">
+            <label for="return-journey">Return Journey Required</label>
+            <select id="return-journey" name="return-journey">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+
+          <!-- Return fields (shown conditionally) -->
+          <div id="return-fields" style="display:none">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date" name="return-date">
+              </div>
+              <div class="form-field">
+                <label for="return-time">Return Time</label>
+                <input type="time" id="return-time" name="return-time">
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="form-nav">
           <button type="button" class="form-nav__back" disabled aria-disabled="true">← Back</button>
           <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
         </div>
       </fieldset>
 
-      <!-- ── STEP 2: Journey Details ──────────────────────────────────────── -->
-      <fieldset class="form-step" aria-label="Journey details">
-        <h2 class="step-title">Journey Details</h2>
-
-        <div class="form-row form-row--full" style="margin-bottom:var(--sp-5)">
-          <div class="form-field">
-            <label for="service-required">Service Required</label>
-            <select id="service-required" name="service-required" required>
-              <option value="">Select a service</option>
-              <option value="airport-transfer">Airport Transfer</option>
-              <option value="chauffeur">Chauffeur Service</option>
-              <option value="corporate-transport">Corporate Transport</option>
-              <option value="event-conference">Event &amp; Conference Transport</option>
-              <option value="shuttle">Shuttle Service</option>
-              <option value="ground-handling">Ground Handling &amp; Coordination</option>
-            </select>
-            <span class="field-error" role="alert"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="pickup-date">Pickup Date</label>
-            <input type="date" id="pickup-date" name="pickup-date" required>
-            <span class="field-error" role="alert"></span>
-          </div>
-          <div class="form-field">
-            <label for="pickup-time">Pickup Time</label>
-            <input type="time" id="pickup-time" name="pickup-time" required>
-            <span class="field-error" role="alert"></span>
-          </div>
-        </div>
-
-        <div class="form-row form-row--full">
-          <div class="form-field">
-            <label for="pickup-location">Pickup Location</label>
-            <input type="text" id="pickup-location" name="pickup-location" placeholder="Address, airport, hotel…" required>
-            <span class="field-error" role="alert"></span>
-          </div>
-        </div>
-
-        <div class="form-row form-row--full">
-          <div class="form-field">
-            <label for="dropoff-location">Drop-off Location</label>
-            <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Address, airport, hotel…" required>
-            <span class="field-error" role="alert"></span>
-          </div>
-        </div>
-
-        <div class="form-field" style="margin-bottom:var(--sp-5)">
-          <label for="return-journey">Return Journey Required</label>
-          <select id="return-journey" name="return-journey">
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
-        </div>
-
-        <!-- Return fields (shown conditionally) -->
-        <div id="return-fields" style="display:none">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="return-date">Return Date</label>
-              <input type="date" id="return-date" name="return-date">
-            </div>
-            <div class="form-field">
-              <label for="return-time">Return Time</label>
-              <input type="time" id="return-time" name="return-time">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-nav">
-          <button type="button" class="form-nav__back" data-back>← Back</button>
-          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
-        </div>
-      </fieldset>
-
-      <!-- ── STEP 3: Passenger Details ───────────────────────────────────── -->
-      <fieldset class="form-step" aria-label="Passenger details">
-        <h2 class="step-title">Passenger Details</h2>
+      <!-- ── STEP 2: Passengers, Vehicle & Flight ──────────────────────────── -->
+      <fieldset class="form-step" aria-label="Passengers, vehicle, and flight details">
+        <h2 class="step-title">Passengers &amp; Vehicle</h2>
 
         <div class="form-row">
           <div class="form-field">
@@ -331,18 +313,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <div class="form-nav">
-          <button type="button" class="form-nav__back" data-back>← Back</button>
-          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
-        </div>
-      </fieldset>
+        <div class="flight-section is-visible">
+          <p class="flight-section__label">Vehicle Preference</p>
+          <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-bottom:var(--sp-6)">Select your preferred vehicle type, or choose "Not sure" and we'll recommend the best option.</p>
 
-      <!-- ── STEP 4: Vehicle Required ────────────────────────────────────── -->
-      <fieldset class="form-step" aria-label="Vehicle preference">
-        <h2 class="step-title">Vehicle Preference</h2>
-        <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-bottom:var(--sp-6)">Select your preferred vehicle type, or choose "Not sure" and we'll recommend the best option.</p>
-
-        <div class="vehicle-options" role="group" aria-label="Vehicle options">
+          <div class="vehicle-options" role="group" aria-label="Vehicle options">
 
           <div class="vehicle-option">
             <input type="radio" name="vehicle" id="v-sedan" value="sedan">
@@ -424,21 +399,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </label>
           </div>
 
+          </div>
         </div>
-
-        <div class="form-nav">
-          <button type="button" class="form-nav__back" data-back>← Back</button>
-          <button type="button" class="btn btn--gold btn--lg" data-next>Continue →</button>
-        </div>
-      </fieldset>
-
-      <!-- ── STEP 5: Flight Information ──────────────────────────────────── -->
-      <fieldset class="form-step" aria-label="Flight information">
-        <h2 class="step-title">Flight Information</h2>
-        <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-bottom:var(--sp-6)">We use your flight details to monitor arrivals and adjust your pickup time accordingly.</p>
 
         <div id="flight-section" class="flight-section is-visible">
           <p class="flight-section__label">Flight Details</p>
+          <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-bottom:var(--sp-6)">We use your flight details to monitor arrivals and adjust your pickup time accordingly.</p>
 
           <div class="form-row">
             <div class="form-field">
@@ -489,7 +455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <p style="font-size:var(--fs-sm);color:var(--c-slate);margin-top:var(--sp-2);">
-          If this is not an airport transfer, you can skip this step.
+          If this is not an airport transfer, you can skip this section.
         </p>
 
         <div class="form-nav">
@@ -498,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </fieldset>
 
-      <!-- ── STEP 6: Additional Information ─────────────────────────────── -->
+      <!-- ── STEP 3: Additional Information ─────────────────────────────── -->
       <fieldset class="form-step" aria-label="Additional information">
         <h2 class="step-title">Additional Information</h2>
 
