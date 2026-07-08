@@ -237,9 +237,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div>
             <button type="submit" class="btn btn--gold btn--lg btn--full" id="contact-submit">Send Enquiry</button>
           </div>
-          <p id="contact-confirm" style="display:none; color:var(--c-gold); font-family:var(--f-label); font-size:var(--fs-sm); text-align:center; padding:var(--sp-4); border:1px solid var(--c-gold-border); border-radius:var(--r-md);">
-            Thank you — we've received your enquiry and will be in touch shortly.
-          </p>
         </form>
       </div>
 
@@ -304,7 +301,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Simple contact form submit
   (function () {
     var form    = document.getElementById('contact-form');
-    var confirm = document.getElementById('contact-confirm');
     var btn     = document.getElementById('contact-submit');
     if (!form) return;
     form.addEventListener('submit', function (e) {
@@ -321,8 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         body: JSON.stringify(data)
       }).then(function (res) {
         if (res.ok) {
-          form.style.display = 'none';
-          confirm.style.display = 'block';
+          window.location.href = 'contact-thank-you.html';
         } else {
           btn.textContent = 'Send Enquiry';
           btn.disabled = false;

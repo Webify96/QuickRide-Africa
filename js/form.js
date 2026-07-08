@@ -13,12 +13,40 @@
   const dots         = Array.from(document.querySelectorAll('.step-dot'));
   const btnNext      = form.querySelectorAll('[data-next]');
   const btnBack      = form.querySelectorAll('[data-back]');
-  const confirmation = document.getElementById('form-confirmation');
   const flightSection = document.getElementById('flight-section');
   const serviceSelect = document.getElementById('service-required');
 
   let current = 0;
   const TOTAL = steps.length;
+  let isPopping = false;
+
+  /* ─── Step URL tracking (virtual pageviews for GTM) ───────────────────── */
+
+  function pushStepURL(index) {
+    if (isPopping) return;
+    var url = new URL(window.location.href);
+    url.searchParams.set('step', index + 1);
+    history.pushState({ step: index + 1 }, '', url.toString());
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'virtualPageview',
+      virtualPagePath: url.pathname + url.search
+    });
+  }
+
+  window.addEventListener('popstate', function () {
+    var params = new URLSearchParams(window.location.search);
+    var stepParam = parseInt(params.get('step'), 10);
+    var targetIndex = (stepParam >= 1 && stepParam <= TOTAL) ? stepParam - 1 : 0;
+    if (targetIndex === current) return;
+    isPopping = true;
+    if (targetIndex > current) {
+      goTo(targetIndex);
+    } else {
+      goBack(targetIndex);
+    }
+    isPopping = false;
+  });
 
   /* ─── Navigation ────────────────────────────────────────────────────── */
 
@@ -35,6 +63,7 @@
 
     // Scroll to top of form
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    pushStepURL(current);
   }
 
   function goBack(index) {
@@ -48,6 +77,7 @@
     dots[current].classList.add('step-dot--active');
 
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    pushStepURL(current);
   }
 
   btnNext.forEach(function (btn) {
@@ -182,11 +212,7 @@
       body: JSON.stringify(data)
     }).then(function (res) {
       if (res.ok) {
-        form.style.display = 'none';
-        if (confirmation) {
-          confirmation.classList.add('is-visible');
-          confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        window.location.href = 'thank-you.html';
       } else {
         if (btn) { btn.textContent = 'Submit Request'; btn.disabled = false; }
         alert('Something went wrong. Please try again or email us directly.');
