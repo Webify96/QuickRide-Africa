@@ -206,10 +206,16 @@
     const btn = steps[current].querySelector('[data-next]');
     if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
 
-    fetch('https://formspree.io/f/mvzjwbzg', {
+    var formData = new FormData(form);
+    var data = {};
+    formData.forEach(function (value, key) {
+      if (typeof value === 'string') data[key] = value;
+    });
+
+    fetch('/api/book', {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
     }).then(function (res) {
       if (res.ok) {
         window.location.href = 'thank-you.html';
