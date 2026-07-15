@@ -267,76 +267,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
   </div>
   <div class="fleet-masonry-wrap">
-    <div class="fleet-masonry" role="list">
-      <div class="fleet-card" role="listitem">
-        <img src="img/5.jpeg" alt="Mercedes-Benz S-Class executive sedan â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">S-Class Executive Sedan</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/1.jpeg" alt="Range Rover executive SUV â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Range Rover SUV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/2.jpeg" alt="Mercedes-Benz G-Class AMG â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">G-Class AMG Executive SUV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/3.jpeg" alt="Mercedes-Benz G-Class Johannesburg â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">G-Class Â· Johannesburg</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/4.jpeg" alt="Mercedes-Benz G-Class rear â€" QuickRide Africa corporate transport" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">G-Class Executive SUV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/6.jpeg" alt="Mercedes-Benz V-Class executive MPV â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">V-Class Executive MPV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/7.jpeg" alt="Hyundai Staria executive MPV â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Hyundai Staria MPV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/8.jpeg" alt="Mercedes-Benz luxury coach â€" QuickRide Africa group transport" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Luxury Coach</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/9.jpeg" alt="Mercedes-Benz GLE executive SUV â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">GLE Executive SUV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/10.jpeg" alt="Luxury leather rear cabin interior â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Luxury Interior</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/11.jpeg" alt="Mercedes-Benz Sprinter executive van â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Sprinter Executive Van</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/12.jpeg" alt="BMW 7 Series luxury sedan Cape Town â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">BMW 7 Series Â· Cape Town</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/13.jpeg" alt="BMW X7 SUV and Mercedes-Benz V-Class â€" QuickRide Africa fleet" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">BMW X7 &amp; V-Class</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/14.jpeg" alt="BMW X7 executive SUV with chauffeur â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">BMW X7 Executive SUV</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/15.jpeg" alt="BMW X7 rear cabin with refreshments â€" QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Executive Cabin Amenities</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/16.jpeg" alt="BMW X7 rear cabin leather interior - QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">BMW X7 Rear Cabin</div>
-      </div>
-      <div class="fleet-card" role="listitem">
-        <img src="img/17.jpeg" alt="Mercedes-Benz S-Class rear cabin with tablet screens and refreshments - QuickRide Africa" class="fleet-card__img" loading="lazy">
-        <div class="fleet-card__label">Mercedes-Benz S-Class Cabin</div>
-      </div>
-    </div>
+    <div class="fleet-masonry" role="list" id="fleet-masonry"></div>
   </div>
 </section>
 
@@ -474,6 +405,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="js/nav.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/fleet-data.js"></script>
+<script>buildFleetCards('fleet-masonry');</script>
 <script>
 (function () {
   var lightbox   = document.getElementById('lightbox');
