@@ -113,6 +113,8 @@
     step.querySelectorAll('[required]').forEach(function (input) {
       const field = input.closest('.form-field');
       const errorEl = field ? field.querySelector('.field-error') : null;
+      const labelEl = field ? field.querySelector('label:not(.contact-method-opt__label)') : null;
+      const fieldName = labelEl ? labelEl.childNodes[0].textContent.trim().replace(/:$/, '') : 'This field';
 
       let isEmpty = false;
       if (input.type === 'radio' || input.type === 'checkbox') {
@@ -125,13 +127,17 @@
       if (isEmpty) {
         valid = false;
         if (field) field.classList.add('has-error');
-        if (errorEl) errorEl.textContent = 'This field is required.';
+        if (errorEl) errorEl.textContent = fieldName + ' is required.';
       } else if (input.type === 'email' && !isValidEmail(input.value)) {
         valid = false;
         if (field) field.classList.add('has-error');
         if (errorEl) errorEl.textContent = 'Please enter a valid email address.';
       }
     });
+
+    // Scroll to first errored field so user can see it
+    var firstError = step.querySelector('.form-field.has-error');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     return valid;
   }
@@ -200,16 +206,10 @@
     const btn = steps[current].querySelector('[data-next]');
     if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
 
-    var formData = new FormData(form);
-    var data = {};
-    formData.forEach(function (value, key) {
-      if (typeof value === 'string') data[key] = value;
-    });
-
-    fetch('/api/book', {
+    fetch('https://formspree.io/f/mvzjwbzg', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
     }).then(function (res) {
       if (res.ok) {
         window.location.href = 'thank-you.html';
