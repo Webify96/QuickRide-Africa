@@ -22,6 +22,8 @@
 
   /* ─── Step URL tracking (virtual pageviews for GTM) ───────────────────── */
 
+  var STEP_NAMES = ['Details', 'Passengers & Vehicle', 'Additional Information'];
+
   function pushStepURL(index) {
     if (isPopping) return;
     var url = new URL(window.location.href);
@@ -30,7 +32,9 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'virtualPageview',
-      virtualPagePath: url.pathname + url.search
+      virtualPagePath: url.pathname + url.search,
+      formStep: index + 1,
+      formStepName: STEP_NAMES[index] || ('Step ' + (index + 1))
     });
   }
 
@@ -233,5 +237,20 @@
 
   steps[0].classList.add('is-active');
   if (dots[0]) dots[0].classList.add('step-dot--active');
+
+  // Fire virtualPageview for step 1 so all steps have consistent ?step= tracking in GTM.
+  // replaceState keeps the history entry clean (no extra back-button stop).
+  (function () {
+    var url = new URL(window.location.href);
+    url.searchParams.set('step', 1);
+    history.replaceState({ step: 1 }, '', url.toString());
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'virtualPageview',
+      virtualPagePath: url.pathname + url.search,
+      formStep: 1,
+      formStepName: STEP_NAMES[0] || 'Step 1'
+    });
+  })();
 
 })();
