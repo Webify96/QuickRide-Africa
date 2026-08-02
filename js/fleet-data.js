@@ -21,7 +21,15 @@ var FLEET_IMAGES = [
   { src: 'img/14.jpeg', alt: 'BMW X7 executive SUV with chauffeur - QuickRide Africa',                label: 'BMW X7 Executive SUV' },
   { src: 'img/15.jpeg', alt: 'BMW X7 rear cabin with refreshments - QuickRide Africa',                label: 'Executive Cabin Amenities' },
   { src: 'img/16.jpeg', alt: 'BMW X7 rear cabin leather interior - QuickRide Africa',                 label: 'BMW X7 Rear Cabin' },
-  { src: 'img/17.jpeg', alt: 'Mercedes-Benz S-Class rear cabin with tablet screens - QuickRide Africa', label: 'Mercedes-Benz S-Class Cabin' }
+  { src: 'img/17.jpeg', alt: 'Mercedes-Benz S-Class rear cabin with tablet screens - QuickRide Africa',    label: 'Mercedes-Benz S-Class Cabin' },
+  { src: 'img/18.jpeg', alt: 'Mercedes-Benz GLE AMG executive SUV side profile Cape Town - QuickRide Africa', label: 'GLE AMG · Cape Town' },
+  { src: 'img/19.jpeg', alt: 'Mercedes-Benz GLE AMG front grille Cape Town - QuickRide Africa',              label: 'GLE AMG Front' },
+  { src: 'img/20.jpeg', alt: 'Mercedes-Benz GLE AMG three-quarter front view Cape Town - QuickRide Africa',  label: 'GLE AMG Executive SUV' },
+  { src: 'img/21.jpeg', alt: 'Mercedes-Benz GLE AMG rear view Cape Town - QuickRide Africa',                 label: 'GLE AMG Rear' },
+  { src: 'img/22.jpeg', alt: 'Mercedes-Benz S-Class cognac quilted leather interior - QuickRide Africa',     label: 'S-Class Leather Interior' },
+  { src: 'img/23.jpeg', alt: 'Mercedes-Benz S-Class rear cabin amenities with Valpre water - QuickRide Africa', label: 'S-Class Cabin Amenities' },
+  { src: 'img/24.jpeg', alt: 'Mercedes-Benz S500 rear with door open Cape Town - QuickRide Africa',          label: 'S500 · Cape Town' },
+  { src: 'img/25.jpeg', alt: 'Mercedes-Benz S-Class front face Twelve Apostles Cape Town - QuickRide Africa', label: 'S-Class · Twelve Apostles' }
 ];
 
 function buildFleetCards(containerId) {
