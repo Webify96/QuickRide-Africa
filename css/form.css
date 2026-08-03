@@ -19,7 +19,9 @@
 .form-header {
   margin-bottom: var(--sp-10);
 }
-.form-header .eyebrow { margin-bottom: var(--sp-4); }
+.form-header .eyebrow {
+  margin-bottom: var(--sp-4);
+}
 .form-header__title {
   font-family: var(--f-display);
   font-weight: 300;
@@ -54,7 +56,8 @@
 }
 
 .step-dot__circle {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   border: 1.5px solid var(--c-divider-dark);
   background: transparent;
@@ -67,8 +70,8 @@
   color: var(--c-slate-dim);
   transition:
     border-color var(--dur-base),
-    background   var(--dur-base),
-    color        var(--dur-base);
+    background var(--dur-base),
+    color var(--dur-base);
   position: relative;
   z-index: 1;
 }
@@ -87,7 +90,7 @@
 
 /* Connecting line */
 .step-dot::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 13px;
   left: calc(50% + 14px);
@@ -96,8 +99,12 @@
   background: var(--c-divider-dark);
   transition: background var(--dur-base);
 }
-.step-dot:last-child::before { display: none; }
-.step-dot--done::before { background: var(--c-gold-border); }
+.step-dot:last-child::before {
+  display: none;
+}
+.step-dot--done::before {
+  background: var(--c-gold-border);
+}
 
 .step-dot__label {
   font-family: var(--f-label);
@@ -109,11 +116,17 @@
   white-space: nowrap;
   transition: color var(--dur-base);
 }
-.step-dot--active .step-dot__label { color: var(--c-gold); }
-.step-dot--done .step-dot__label   { color: var(--c-slate); }
+.step-dot--active .step-dot__label {
+  color: var(--c-gold);
+}
+.step-dot--done .step-dot__label {
+  color: var(--c-slate);
+}
 
 @media (max-width: 600px) {
-  .step-dot__label { display: none; }
+  .step-dot__label {
+    display: none;
+  }
 }
 
 /* ─── Form steps (slide in/out) ───────────────────────────────────────────── */
@@ -126,8 +139,14 @@
 }
 
 @keyframes stepIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .step-title {
@@ -147,11 +166,18 @@
   gap: var(--sp-5) var(--sp-6);
   margin-bottom: var(--sp-5);
 }
-.form-row--full { grid-template-columns: 1fr; }
-.form-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+.form-row--full {
+  grid-template-columns: 1fr;
+}
+.form-row--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 @media (max-width: 580px) {
-  .form-row, .form-row--3 { grid-template-columns: 1fr; }
+  .form-row,
+  .form-row--3 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .form-field {
@@ -181,8 +207,8 @@
   outline: none;
   transition:
     border-color var(--dur-fast),
-    background   var(--dur-fast),
-    box-shadow   var(--dur-fast);
+    background var(--dur-fast),
+    box-shadow var(--dur-fast);
   appearance: none;
   -webkit-appearance: none;
 }
@@ -227,15 +253,17 @@
 .form-field.has-error input,
 .form-field.has-error select,
 .form-field.has-error textarea {
-  border-color: #E05252;
+  border-color: #e05252;
   box-shadow: 0 0 0 3px rgba(224, 82, 82, 0.1);
 }
 .form-field .field-error {
   font-size: var(--fs-xs);
-  color: #E05252;
+  color: #e05252;
   display: none;
 }
-.form-field.has-error .field-error { display: block; }
+.form-field.has-error .field-error {
+  display: block;
+}
 
 /* Optional badge */
 .field-opt {
@@ -261,7 +289,8 @@
 .vehicle-option input[type="radio"] {
   position: absolute;
   opacity: 0;
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
 }
 .vehicle-option__label {
   display: flex;
@@ -277,10 +306,11 @@
   text-align: center;
   transition:
     border-color var(--dur-fast),
-    background   var(--dur-fast);
+    background var(--dur-fast);
 }
 .vehicle-option__label svg {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
   stroke: var(--c-slate);
   stroke-width: 1.25;
   fill: none;
@@ -298,8 +328,12 @@
   border-color: var(--c-gold);
   background: var(--c-gold-muted);
 }
-.vehicle-option input:checked + .vehicle-option__label svg { stroke: var(--c-gold); }
-.vehicle-option input:checked + .vehicle-option__label .vehicle-option__name { color: var(--c-gold); }
+.vehicle-option input:checked + .vehicle-option__label svg {
+  stroke: var(--c-gold);
+}
+.vehicle-option input:checked + .vehicle-option__label .vehicle-option__name {
+  color: var(--c-gold);
+}
 .vehicle-option__label:hover {
   border-color: var(--c-gold-border);
   background: rgba(184, 146, 42, 0.05);
@@ -312,8 +346,15 @@
   flex-wrap: wrap;
   margin-top: var(--sp-2);
 }
-.contact-method-opt { position: relative; }
-.contact-method-opt input { position: absolute; opacity: 0; width: 0; height: 0; }
+.contact-method-opt {
+  position: relative;
+}
+.contact-method-opt input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 .contact-method-opt__label {
   display: inline-block;
   padding: 0.4em 1em;
@@ -326,8 +367,8 @@
   cursor: pointer;
   transition:
     border-color var(--dur-fast),
-    color        var(--dur-fast),
-    background   var(--dur-fast);
+    color var(--dur-fast),
+    background var(--dur-fast);
 }
 .contact-method-opt input:checked + .contact-method-opt__label {
   border-color: var(--c-gold);
@@ -362,8 +403,13 @@
   padding: 0;
   transition: color var(--dur-fast);
 }
-.form-nav__back:hover { color: var(--c-pearl); }
-.form-nav__back:disabled { opacity: 0.3; cursor: default; }
+.form-nav__back:hover {
+  color: var(--c-pearl);
+}
+.form-nav__back:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
 
 /* ─── Confirmation message ───────────────────────────────────────────────── */
 .form-confirmation {
@@ -371,10 +417,13 @@
   text-align: center;
   padding: var(--sp-16) var(--sp-8);
 }
-.form-confirmation.is-visible { display: block; }
+.form-confirmation.is-visible {
+  display: block;
+}
 
 .form-confirmation__icon {
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
   border: 1px solid var(--c-gold-border);
   border-radius: 50%;
   display: flex;
@@ -383,7 +432,8 @@
   margin: 0 auto var(--sp-8);
 }
 .form-confirmation__icon svg {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
   stroke: var(--c-gold);
   stroke-width: 1.5;
   fill: none;
@@ -412,7 +462,9 @@
   border-top: 1px solid var(--c-divider-dark);
   margin-top: var(--sp-6);
 }
-.flight-section.is-visible { display: block; }
+.flight-section.is-visible {
+  display: block;
+}
 .flight-section__label {
   font-family: var(--f-label);
   font-size: var(--fs-xs);
