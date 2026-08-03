@@ -29,7 +29,9 @@ var FLEET_IMAGES = [
   { src: 'img/22.jpeg', alt: 'Mercedes-Benz S-Class cognac quilted leather interior - QuickRide Africa',     label: 'S-Class Leather Interior' },
   { src: 'img/23.jpeg', alt: 'Mercedes-Benz S-Class rear cabin amenities with Valpre water - QuickRide Africa', label: 'S-Class Cabin Amenities' },
   { src: 'img/24.jpeg', alt: 'Mercedes-Benz S500 rear with door open Cape Town - QuickRide Africa',          label: 'S500 · Cape Town' },
-  { src: 'img/25.jpeg', alt: 'Mercedes-Benz S-Class front face Twelve Apostles Cape Town - QuickRide Africa', label: 'S-Class · Twelve Apostles' }
+  { src: 'img/25.jpeg', alt: 'Mercedes-Benz S-Class front face Twelve Apostles Cape Town - QuickRide Africa',  label: 'S-Class · Twelve Apostles' },
+  { src: 'img/26.jpeg', alt: 'Mercedes-Benz C-Class AMG at luxury hotel entrance - QuickRide Africa',         label: 'C-Class AMG · Hotel Transfer' },
+  { src: 'img/27.jpeg', alt: 'Mercedes-Benz C-Class AMG at Sandton Towers Johannesburg - QuickRide Africa',   label: 'C-Class AMG · Sandton' }
 ];
 
 function buildFleetCards(containerId) {
