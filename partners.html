@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
@@ -17,10 +17,10 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ | QuickRide Africa Transport Services</title>
+    <title>Trusted Partners | QuickRide Africa</title>
     <meta
       name="description"
-      content="Answers to common questions about bookings, airport transfers, corporate transport, vehicle options, urgent requests, and group movements."
+      content="QuickRide Africa works with a select network of trusted partners to deliver seamless end-to-end experiences for our clients across Southern Africa."
     />
     <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg" />
@@ -42,7 +42,7 @@
       href="/favicon_io/favicon-16x16.png"
     />
     <link rel="manifest" href="/favicon_io/site.webmanifest" />
-    <link rel="canonical" href="https://quickride.africa/faq.html" />
+    <link rel="canonical" href="https://quickride.africa/partners.html" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,62 +58,137 @@
     <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do you offer airport meet-and-greet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we provide meet-and-greet services where required. Our chauffeur will be waiting at the arrivals hall with your name displayed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can you handle group transport?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we coordinate both small and large group movements, from executive delegations to full conference transport with multiple vehicles."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you work with corporate clients?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our services are designed for corporate and institutional clients. We offer corporate account solutions with dedicated support."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I request a specific vehicle?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can select a preferred vehicle type when submitting your quote request, or choose 'Not sure' and we will recommend the most suitable option."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you accept last-minute bookings?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we can accommodate scheduled and urgent bookings subject to availability. Contact us directly for last-minute requests."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I book?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Submit the quote form with your trip details, and our team will review and respond with a quotation as soon as possible."
-            }
-          }
-        ]
+    <style>
+      /* ── Featured partner (single-partner showcase layout) ── */
+      .featured-partner {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        border: 1px solid var(--c-rule, #e5e0d8);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: var(--sp-10);
       }
-    </script>
+
+      .featured-partner__brand {
+        background: var(--c-bone, #f5f1eb);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--sp-8);
+        padding: clamp(2.5rem, 5vw, 4rem) var(--sp-8);
+        border-right: 1px solid var(--c-rule, #e5e0d8);
+      }
+
+      .featured-partner__logo {
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .featured-partner__visit {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--sp-2);
+        font-size: var(--fs-sm);
+        font-weight: 600;
+        color: var(--c-gold, #c9a84c);
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        transition: opacity 0.2s;
+      }
+
+      .featured-partner__visit:hover {
+        opacity: 0.7;
+      }
+
+      .featured-partner__visit svg {
+        flex-shrink: 0;
+      }
+
+      .featured-partner__content {
+        background: #fff;
+        padding: clamp(2rem, 5vw, 3.5rem) clamp(2rem, 5vw, 3.5rem);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-6);
+      }
+
+      .featured-partner__category {
+        font-size: var(--fs-xs, 0.75rem);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--c-gold, #c9a84c);
+        margin: 0;
+      }
+
+      .featured-partner__name {
+        font-family: var(--f-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--c-on-light);
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .featured-partner__desc {
+        font-size: var(--fs-base);
+        color: var(--c-body);
+        line-height: 1.85;
+        margin: 0;
+        max-width: 60ch;
+      }
+
+      .featured-partner__tags {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--sp-2);
+      }
+
+      .featured-partner__tags li {
+        font-size: var(--fs-sm, 0.875rem);
+        color: var(--c-body);
+        background: var(--c-bone, #f5f1eb);
+        border: 1px solid var(--c-rule, #e5e0d8);
+        border-radius: 2px;
+        padding: var(--sp-1) var(--sp-3);
+        white-space: nowrap;
+      }
+
+      /* ── Coming soon note ── */
+      .partners-coming {
+        margin-top: var(--sp-10);
+        text-align: center;
+        padding: var(--sp-8);
+        border: 1px dashed var(--c-rule, #e5e0d8);
+        border-radius: 4px;
+      }
+
+      .partners-coming p {
+        font-size: var(--fs-sm);
+        color: var(--c-body);
+        opacity: 0.6;
+        margin: 0;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 680px) {
+        .featured-partner {
+          grid-template-columns: 1fr;
+        }
+
+        .featured-partner__brand {
+          border-right: none;
+          border-bottom: 1px solid var(--c-rule, #e5e0d8);
+          padding: var(--sp-10) var(--sp-8);
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -134,19 +209,28 @@
       aria-label="Main navigation"
     >
       <div class="container nav__inner">
-        <a href="index.html" class="nav__logo"
-          ><img
+        <a
+          href="index.html"
+          class="nav__logo"
+          aria-label="QuickRide Africa &mdash; home"
+        >
+          <img
             src="img/logo/logo.svg"
             alt="QuickRide Africa"
             class="nav__logo-img"
-        /></a>
+          />
+        </a>
         <ul class="nav__links" role="list">
           <li><a href="about.html" class="nav__link">About</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="fleet.html" class="nav__link">Fleet</a></li>
           <li><a href="corporate.html" class="nav__link">Corporate</a></li>
           <li><a href="faq.html" class="nav__link">FAQ</a></li>
-          <li><a href="partners.html" class="nav__link">Partners</a></li>
+          <li>
+            <a href="partners.html" class="nav__link nav__link--active"
+              >Partners</a
+            >
+          </li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
         <div class="nav__actions">
@@ -164,14 +248,18 @@
         </div>
       </div>
     </nav>
-    <div class="nav__mobile" id="nav-mobile">
+    <div class="nav__mobile" id="nav-mobile" aria-label="Mobile navigation">
       <ul class="nav__mobile-links" role="list">
         <li><a href="about.html" class="nav__mobile-link">About</a></li>
         <li><a href="services.html" class="nav__mobile-link">Services</a></li>
         <li><a href="fleet.html" class="nav__mobile-link">Fleet</a></li>
-        <li><a href="corporate.html" class="nav__mobile-link">Corporate</a></li>
+        <li>
+          <a href="corporate.html" class="nav__mobile-link">Corporate</a>
+        </li>
         <li><a href="faq.html" class="nav__mobile-link">FAQ</a></li>
-        <li><a href="partners.html" class="nav__mobile-link">Partners</a></li>
+        <li>
+          <a href="partners.html" class="nav__mobile-link">Partners</a>
+        </li>
         <li><a href="contact.html" class="nav__mobile-link">Contact</a></li>
       </ul>
       <div class="nav__mobile-cta">
@@ -187,242 +275,137 @@
     <header class="page-hero">
       <div class="container">
         <span class="page-hero__accent"></span>
-        <p class="eyebrow page-hero__eyebrow">FAQ</p>
-        <h1 class="page-hero__title">Common questions answered.</h1>
+        <p class="eyebrow page-hero__eyebrow">Trusted Partners</p>
+        <h1 class="page-hero__title">
+          Companies we trust to extend our service to you.
+        </h1>
         <p class="page-hero__sub">
-          Everything you need to know about our services, bookings, and how we
-          work.
+          QuickRide Africa works with a select network of trusted partners who
+          share our commitment to professionalism, reliability, and client care
+          across Southern Africa.
         </p>
       </div>
     </header>
 
-    <!-- FAQ ACCORDION -->
-    <section class="section section--dark" aria-labelledby="faq-heading">
-      <div class="container" style="max-width: 900px">
-        <h2 class="sr-only" id="faq-heading">Frequently Asked Questions</h2>
-
-        <div class="faq-list" data-reveal>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q"
-                >Do you offer airport meet-and-greet services?</span
-              >
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Yes, we provide meet-and-greet services where required. Our
-                chauffeur will be present in the arrivals hall with a name
-                board, and we monitor your flight to adjust for any delays. We
-                can also assist with luggage coordination and escort to the
-                vehicle.
-              </p>
-            </div>
+    <!-- INTRO -->
+    <section class="section section--midnight" aria-labelledby="partners-intro">
+      <div class="container">
+        <div class="split-grid">
+          <div class="split-grid__text-col" data-reveal>
+            <p class="eyebrow">Why We Partner</p>
+            <h2
+              class="heading"
+              id="partners-intro"
+              style="color: var(--c-pearl)"
+            >
+              Extending what we do well, through people we trust.
+            </h2>
+            <p class="body-lead" style="color: var(--c-slate)">
+              Our clients often need more than transport. Whether it&rsquo;s
+              navigating immigration requirements, arranging visa documentation,
+              or planning travel logistics, we point them toward partners we
+              have personally vetted and trust to deliver at the same standard
+              we hold ourselves to.
+            </p>
+            <p
+              style="
+                font-size: var(--fs-base);
+                color: var(--c-slate);
+                line-height: 1.85;
+                margin-top: var(--sp-4);
+              "
+            >
+              Every partner listed here has been selected for their expertise,
+              their professionalism, and their alignment with our values. We
+              recommend them because we stand behind them.
+            </p>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q"
-                >Can you handle group transport and large movements?</span
-              >
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Yes, we coordinate both small and large group movements. Whether
-                it's a delegation of 4 executives or a full conference requiring
-                multiple vehicles, we plan and manage transport logistics to
-                ensure seamless movements. We provide vehicles ranging from
-                sedans to full-size coaches.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q"
-                >Do you work with corporate clients and travel companies?</span
-              >
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Yes, our services are specifically designed for corporate and
-                institutional clients. We work with companies, travel management
-                companies, destination management companies, hotels, embassies,
-                government departments, and event teams. We offer corporate
-                account solutions for clients with regular transport
-                requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q"
-                >Can I request a specific vehicle type?</span
-              >
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Yes. When submitting your quote request, you can select a
-                preferred vehicle from our fleet â€” executive sedan, SUV, MPV,
-                7-seater, 13-seater van, minibus, or coach. If you're unsure,
-                simply choose "Not sure" and we will recommend the most suitable
-                vehicle based on your passenger count and journey requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q"
-                >Do you accept last-minute and urgent bookings?</span
-              >
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Yes, we accommodate scheduled trips and last-minute bookings
-                subject to vehicle and chauffeur availability. For urgent
-                requests, we recommend calling us directly at +27 74 270 5488 so
-                we can assess availability immediately and respond as quickly as
-                possible.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q"
-                >How do I request a quote or make a booking?</span
-              >
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Submit the quote form on our
-                <a href="book.html" style="color: var(--c-gold)"
-                  >Book / Request a Quote</a
-                >
-                page with your trip details â€” journey type, pickup and
-                drop-off locations, date and time, and passenger count. Our team
-                will review the request and send you a quotation as soon as
-                possible. You can also contact us directly via email or phone.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q">What areas do you serve?</span>
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                We operate across Southern Africa. Our primary service areas
-                include major cities and airports â€” including Johannesburg,
-                Cape Town, and surrounding regions. For out-of-town routes,
-                regional transfers, and specific location requests, please
-                include these details in your quote form and we'll confirm
-                availability.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-trigger__q">What are your operating hours?</span>
-              <span class="faq-trigger__icon" aria-hidden="true">
-                <svg viewBox="0 0 12 12">
-                  <path d="M6 1v10M1 6h10" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" role="region">
-              <p class="faq-answer__inner">
-                Our office operates Monday to Friday, 08:00 â€“ 17:00 for
-                enquiries and quotes. However, our operations team is available
-                24/7 to support confirmed bookings â€” so if your flight lands
-                at 02:00, your chauffeur will be there. Pickup and drop-off are
-                available any time, day or night.
-              </p>
-            </div>
+          <div class="split-grid__img-col" data-reveal data-delay="200">
+            <img
+              src="img/5.jpeg"
+              alt="QuickRide Africa S-Class executive sedan &mdash; professional transport across Southern Africa"
+              class="split-grid__img"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT PROMPT -->
-    <section
-      class="section section--midnight"
-      aria-label="Still have questions?"
-    >
-      <div class="container" style="text-align: center; max-width: 600px">
-        <p class="eyebrow" data-reveal style="margin-bottom: var(--sp-4)">
-          Still have questions?
-        </p>
-        <h2
-          class="heading"
-          style="color: var(--c-pearl); margin-bottom: var(--sp-5)"
-          data-reveal
-          data-delay="100"
-        >
-          We're happy to help.
+    <!-- FEATURED PARTNER -->
+    <section class="section section--bone" aria-labelledby="partners-heading">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="eyebrow">Our Network</p>
+          <h2 class="heading" id="partners-heading">
+            Meet our trusted partners
+          </h2>
+        </header>
+
+        <!-- Vanza Consulting & Immigration -->
+        <article class="featured-partner" data-reveal>
+          <div class="featured-partner__brand">
+            <img
+              src="img/logo/app-logo-light.png"
+              alt="Vanza Consulting &amp; Immigration"
+              class="featured-partner__logo"
+            />
+            <a
+              href="https://www.vanzaconsulting.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--gold"
+            >
+              Visit Website
+            </a>
+          </div>
+
+          <div class="featured-partner__content">
+            <p class="featured-partner__category">
+              Immigration &amp; Global Mobility
+            </p>
+            <h3 class="featured-partner__name">
+              Vanza Consulting &amp; Immigration
+            </h3>
+            <p class="featured-partner__desc">
+              A South Africa-based consulting firm offering tailored immigration
+              and global mobility solutions &mdash; from work, study, and
+              visitor visas to permanent residency and family reunion
+              applications. Their expertise in document services, translation,
+              and apostille makes them an invaluable resource for international
+              clients arriving in Southern Africa.
+            </p>
+            <ul
+              class="featured-partner__tags"
+              aria-label="Services offered by Vanza Consulting"
+            >
+              <li>Immigration &amp; Visa Services</li>
+              <li>Permanent Residency</li>
+              <li>Document Translation</li>
+              <li>Apostille Services</li>
+              <li>Airport Shuttle &amp; City Tours</li>
+              <li>Global Mobility Consulting</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container">
+        <h2 class="cta-band__headline" data-reveal>
+          Need transport to go with your travel plans?
         </h2>
-        <p
-          style="
-            color: var(--c-slate);
-            margin-bottom: var(--sp-8);
-            font-size: var(--fs-base);
-            line-height: 1.8;
-          "
-          data-reveal
-          data-delay="200"
-        >
-          Contact us directly and our team will get back to you.
+        <p class="cta-band__sub" data-reveal data-delay="100">
+          Request a quote and our team will match you with the right vehicle and
+          service for your journey.
         </p>
-        <div
-          style="
-            display: flex;
-            gap: var(--sp-4);
-            justify-content: center;
-            flex-wrap: wrap;
-          "
-          data-reveal
-          data-delay="300"
-        >
-          <a href="contact.html" class="btn btn--outline-gold">Contact Us</a>
-          <a href="book.html" class="btn btn--gold">Request a Quote</a>
+        <div class="cta-band__actions" data-reveal data-delay="200">
+          <a href="book.html" class="btn btn--gold btn--lg">Request a Quote</a>
+          <a href="contact.html" class="btn btn--outline-white btn--lg"
+            >Contact Us</a
+          >
         </div>
       </div>
     </section>
@@ -471,6 +454,16 @@
                   >Event Transport</a
                 >
               </li>
+              <li>
+                <a href="services.html#shuttle" class="footer__link"
+                  >Shuttle Services</a
+                >
+              </li>
+              <li>
+                <a href="services.html#ground" class="footer__link"
+                  >Ground Handling</a
+                >
+              </li>
             </ul>
           </div>
           <div>
@@ -483,7 +476,15 @@
                   >Corporate Accounts</a
                 >
               </li>
-              <li><a href="contact.html" class="footer__link">Contact</a></li>
+              <li><a href="faq.html" class="footer__link">FAQ</a></li>
+              <li>
+                <a href="partners.html" class="footer__link"
+                  >Trusted Partners</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="footer__link">Contact</a>
+              </li>
             </ul>
           </div>
           <div>
@@ -501,6 +502,12 @@
                   ><a href="mailto:booking@quickride.africa"
                     >booking@quickride.africa</a
                   ></span
+                >
+              </div>
+              <div class="footer__contact-item">
+                <span class="footer__contact-label">Office Hours</span
+                ><span class="footer__contact-value"
+                  >Mon&ndash;Fri, 08:00 &ndash; 17:00</span
                 >
               </div>
               <div class="footer__contact-item">
