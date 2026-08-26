@@ -857,3 +857,25 @@
     padding: var(--sp-6);
   }
 }
+
+.partners-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--sp-6);
+  margin-top: var(--sp-10);
+}
+
+.partner-home-card__logo-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-midnight, #0d1117);
+  border-radius: 3px;
+  padding: var(--sp-3) var(--sp-4);
+  flex-shrink: 0;
+}
+
+.partner-home-card__logo-dark .partner-home-card__logo {
+  max-height: 56px;
+  max-width: 120px;
+}
