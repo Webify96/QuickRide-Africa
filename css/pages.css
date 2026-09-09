@@ -971,8 +971,9 @@
 }
 
 .payment-info__pay-label {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
   margin-top: var(--sp-5);
-  margin-bottom: var(--sp-2);
+  margin-bottom: var(--sp-3);
+  font-weight: 500;
 }
