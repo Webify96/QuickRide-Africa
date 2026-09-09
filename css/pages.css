@@ -879,3 +879,153 @@
   max-height: 56px;
   max-width: 120px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PAYMENT OPTIONS — booking page info block & footer badge strip
+═══════════════════════════════════════════════════════════════════════════ */
+
+.payment-info {
+  margin-top: var(--sp-10);
+  padding: var(--sp-8);
+  background: var(--c-bone, #f5f1eb);
+  border: 1px solid var(--c-rule, #e5e0d8);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.payment-info__heading {
+  font-size: var(--fs-sm, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-midnight);
+  margin: 0 0 var(--sp-3);
+}
+
+.payment-info__desc {
+  font-size: var(--fs-sm);
+  color: var(--c-body);
+  margin: 0 auto var(--sp-5);
+  max-width: 52ch;
+}
+
+.payment-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+.payment-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-midnight);
+  background: #fff;
+  border: 1px solid var(--c-rule, #e5e0d8);
+  border-radius: 3px;
+  padding: 5px 14px;
+}
+
+.payment-info__ssl {
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--c-muted);
+  margin: 0 auto var(--sp-3);
+  max-width: 52ch;
+}
+
+.payment-info__tagline {
+  font-size: var(--fs-xs, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-gold, #c9a84c);
+  margin: 0;
+}
+
+/* Footer payment strip */
+.footer__payments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__payment-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__payment-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  padding: 3px 10px;
+}
+
+.footer__payment-ssl {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+}
+
+/* Payment icon sizing */
+.payment-icon {
+  height: 42px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer__payments .payment-icon {
+  height: 28px;
+}
+
+/* Payment badge item (icon + label pair) */
+.payment-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.payment-badge-name {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-body);
+}
+
+/* Footer icon + label pair */
+.footer__payment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.footer__payment-item-label {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
