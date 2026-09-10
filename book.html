@@ -94,6 +94,7 @@
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
         <div class="nav__actions">
+          <a href="pay.html" class="btn btn--outline-gold nav__cta">Make a Payment</a>
           <a href="book.html" class="btn btn--gold nav__cta">Request a Quote</a>
           <button
             class="nav__toggle"
@@ -119,6 +120,7 @@
         <li><a href="contact.html" class="nav__mobile-link">Contact</a></li>
       </ul>
       <div class="nav__mobile-cta">
+        <a href="pay.html" class="btn btn--outline-gold btn--lg">Make a Payment</a>
         <a href="book.html" class="btn btn--gold btn--lg">Request a Quote</a>
       </div>
       <div class="nav__mobile-contact">
@@ -140,6 +142,23 @@
             subject to availability.
           </p>
         </div>
+
+        <!-- Already booked? Pay instead of re-filling the form -->
+        <div class="booking-fork">
+          <div class="booking-fork__text">
+            <p class="booking-fork__title">Already have a confirmed booking?</p>
+            <p class="booking-fork__sub">
+              You don't need to fill in this form again. Go straight to
+              secure payment with your invoice reference.
+            </p>
+          </div>
+          <a href="pay.html" class="btn btn--outline-gold booking-fork__btn"
+            >Make a Payment &#8250;</a
+          >
+        </div>
+        <p class="booking-fork__divider">
+          <span>Otherwise, request a new quote below</span>
+        </p>
 
         <!-- Step progress -->
         <div class="form-stepper" aria-label="Form progress" role="list">
@@ -869,8 +888,6 @@
           </div>
           <p class="payment-info__ssl">&#128274; Our website is SSL secured. Online card payments are securely processed through trusted payment providers.</p>
           <p class="payment-info__tagline">Secure &middot; Convenient &middot; Trusted</p>
-          <p class="payment-info__pay-label">Already have a confirmed booking?</p>
-          <a href="pay.html" class="btn btn--gold" style="margin-top:var(--sp-2);">Pay Now</a>
         </div>
 </div>
     </main>

@@ -37,6 +37,66 @@
   max-width: 55ch;
 }
 
+/* ─── "Already booked?" fork — routes returning clients to payment ────────── */
+.booking-fork {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+  background: var(--c-gold-muted);
+  border: 1px solid var(--c-gold-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+.booking-fork__title {
+  font-family: var(--f-label);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--c-pearl);
+  margin-bottom: var(--sp-1);
+}
+.booking-fork__sub {
+  font-size: var(--fs-sm);
+  color: var(--c-slate);
+  max-width: 46ch;
+}
+.booking-fork__btn {
+  flex-shrink: 0;
+}
+.booking-fork__divider {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  font-family: var(--f-label);
+  font-size: var(--fs-sm);
+  color: var(--c-slate-dim);
+  text-align: center;
+  margin: 0 0 var(--sp-8);
+}
+.booking-fork__divider::before,
+.booking-fork__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--c-divider-dark);
+}
+
+@media (max-width: 600px) {
+  .booking-fork {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .booking-fork__sub {
+    max-width: none;
+  }
+  .booking-fork__btn {
+    width: 100%;
+  }
+}
+
 /* ─── Stepper / progress ─────────────────────────────────────────────────── */
 .form-stepper {
   display: flex;

@@ -242,12 +242,18 @@
 }
 
 .nav__mobile-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
   margin-top: var(--sp-10);
   opacity: 0;
   transform: translateY(10px);
   transition:
     opacity var(--dur-base) var(--ease-out) 300ms,
     transform var(--dur-base) var(--ease-out) 300ms;
+}
+.nav__mobile-cta .btn {
+  width: 100%;
 }
 .nav__mobile.is-open .nav__mobile-cta {
   opacity: 1;
