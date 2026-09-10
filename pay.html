@@ -231,6 +231,92 @@
         margin-top: var(--sp-4);
       }
 
+      .pay-tabs {
+        display: flex;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: var(--sp-7);
+      }
+
+      .pay-tab {
+        flex: 1;
+        padding: 0.65rem 0.5rem;
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.4);
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .pay-tab:first-child {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .pay-tab.is-active {
+        background: rgba(184, 146, 42, 0.12);
+        color: #b8922a;
+      }
+
+      .pay-panel { display: none; }
+      .pay-panel.is-active { display: block; }
+
+      .eft-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: var(--sp-5);
+      }
+
+      .eft-table tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .eft-table tr:last-child {
+        border-bottom: none;
+      }
+
+      .eft-table td {
+        padding: 0.65rem 0;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      .eft-table td:first-child {
+        color: rgba(255, 255, 255, 0.4);
+        width: 44%;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding-right: 0.75rem;
+      }
+
+      .eft-table td:last-child {
+        color: #ffffff;
+        font-weight: 500;
+      }
+
+      .eft-ref-note {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
+        background: rgba(184, 146, 42, 0.07);
+        border: 1px solid rgba(184, 146, 42, 0.18);
+        border-radius: 6px;
+        padding: 0.7rem 0.9rem;
+        line-height: 1.6;
+        margin-bottom: var(--sp-2);
+      }
+
+      .eft-ref-note strong {
+        color: #b8922a;
+        font-weight: 600;
+      }
+
       .pay-status {
         display: none;
         text-align: center;
@@ -336,10 +422,17 @@
 
         <h1 class="pay-card__title">Secure Payment</h1>
         <p class="pay-card__sub">
-          Enter the amount from your quotation and pay securely.<br />
-          Your card details are never stored on our servers.
+          Choose how you'd like to pay for your confirmed booking.
         </p>
 
+        <!-- Tabs -->
+        <div class="pay-tabs">
+          <button class="pay-tab is-active" data-tab="card">Pay by Card</button>
+          <button class="pay-tab" data-tab="eft">Bank Transfer (EFT)</button>
+        </div>
+
+        <!-- Card payment panel -->
+        <div class="pay-panel is-active" id="panel-card">
         <!-- Payment form -->
         <div id="pay-form">
           <div class="pay-field">
@@ -399,6 +492,42 @@
 
           <div id="pay-status" class="pay-status" role="alert"></div>
         </div>
+        </div><!-- /panel-card -->
+
+        <!-- EFT panel -->
+        <div class="pay-panel" id="panel-eft">
+          <table class="eft-table">
+            <tr>
+              <td>Bank</td>
+              <td>First National Bank (FNB)</td>
+            </tr>
+            <tr>
+              <td>Account Name</td>
+              <td>M H MPINGA T/A QUICKRIDE AFRICA</td>
+            </tr>
+            <tr>
+              <td>Account Number</td>
+              <td>63225777838</td>
+            </tr>
+            <tr>
+              <td>Account Type</td>
+              <td>Gold Business Account</td>
+            </tr>
+            <tr>
+              <td>Branch Code</td>
+              <td>210835</td>
+            </tr>
+            <tr>
+              <td>Swift Code</td>
+              <td>FIRNZAJJ</td>
+            </tr>
+          </table>
+          <p class="eft-ref-note">
+            Use your <strong>booking reference</strong> as the payment reference, then send proof of payment to
+            <strong><a href="mailto:booking@quickride.africa" style="color:#b8922a;">booking@quickride.africa</a></strong>
+            so we can confirm your booking.
+          </p>
+        </div><!-- /panel-eft -->
 
         <!-- Accepted badges -->
         <div class="pay-badges">
@@ -601,6 +730,16 @@
         if (params.get("name")) document.getElementById("pay-name").value = params.get("name");
         if (params.get("ref")) document.getElementById("pay-ref").value = params.get("ref");
         if (params.get("amount")) document.getElementById("pay-amount").value = params.get("amount");
+
+        // Tab switching
+        document.querySelectorAll(".pay-tab").forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            document.querySelectorAll(".pay-tab").forEach(function (t) { t.classList.remove("is-active"); });
+            document.querySelectorAll(".pay-panel").forEach(function (p) { p.classList.remove("is-active"); });
+            tab.classList.add("is-active");
+            document.getElementById("panel-" + tab.dataset.tab).classList.add("is-active");
+          });
+        });
       })();
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
